@@ -1,1166 +1,2358 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4.3.3 — Vai Trò Lịch Sử của Chủ Nghĩa Tư Bản</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Josefin+Sans:wght@300;400;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4.3.3 — Vai Trò Lịch Sử của Chủ Nghĩa Tư Bản</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Josefin+Sans:wght@300;400;600&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
 
-:root{
-  --ink:        #0f0e0c;
-  --deep:       #181612;
-  --panel:      #1f1d19;
-  --card:       #252219;
-  --rule:       #35322a;
-  --dust:       #4a4538;
-  --muted:      #8a8070;
-  --body:       #ccc4b0;
-  --bright:     #ede5d0;
-  --white:      #f8f3e8;
-  --amber:      #d4a843;
-  --amber2:     #f0c84a;
-  --teal:       #3d9e8c;
-  --teal2:      #52c9b3;
-  --coral:      #c95a3a;
-  --coral2:     #e06b48;
-  --olive:      #7a8c3a;
-}
+    :root {
+      --ink: #0f0e0c;
+      --deep: #181612;
+      --panel: #1f1d19;
+      --card: #252219;
+      --rule: #35322a;
+      --dust: #4a4538;
+      --muted: #8a8070;
+      --body: #ccc4b0;
+      --bright: #ede5d0;
+      --white: #f8f3e8;
+      --amber: #d4a843;
+      --amber2: #f0c84a;
+      --teal: #3d9e8c;
+      --teal2: #52c9b3;
+      --coral: #c95a3a;
+      --coral2: #e06b48;
+      --olive: #7a8c3a;
+    }
 
-html{scroll-behavior:smooth}
+    html {
+      scroll-behavior: smooth
+    }
 
-body{
-  background:var(--ink);
-  color:var(--body);
-  font-family:'Noto Serif',Georgia,serif;
-  font-size:16px;
-  line-height:1.85;
-  overflow-x:hidden;
-  cursor:none;
-}
+    body {
+      background: var(--ink);
+      color: var(--body);
+      font-family: 'Noto Serif', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.85;
+      overflow-x: hidden;
+      cursor: none;
+    }
 
-/* ── CURSOR ── */
-.cur{position:fixed;width:6px;height:6px;background:var(--amber);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s}
-.cur-o{position:fixed;width:28px;height:28px;border:1px solid rgba(212,168,67,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+    /* ── CURSOR ── */
+    .cur {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: var(--amber);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width .25s, height .25s
+    }
 
-/* ── NOISE ── */
-body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.028'/%3E%3C/svg%3E");pointer-events:none;z-index:8999;mix-blend-mode:overlay}
+    .cur-o {
+      position: fixed;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(212, 168, 67, .4);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%)
+    }
 
-/* ══════════════════════════
+    /* ── NOISE ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.028'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 8999;
+      mix-blend-mode: overlay
+    }
+
+    /* ══════════════════════════
    NAV
 ══════════════════════════ */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:.9rem 2.5rem;
-  background:rgba(15,14,12,.85);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--rule);
-}
-.nav-logo{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;
-  color:var(--amber);font-weight:600;
-}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;
-  color:var(--muted);text-decoration:none;
-  transition:color .2s;
-}
-.nav-links a:hover{color:var(--amber)}
-@media(max-width:600px){.nav-links{display:none}}
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .9rem 2.5rem;
+      background: rgba(15, 14, 12, .85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
 
-/* ══════════════════════════
+    .nav-logo {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .65rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem
+    }
+
+    .nav-links a {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .62rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--amber)
+    }
+
+    @media(max-width:600px) {
+      .nav-links {
+        display: none
+      }
+    }
+
+    /* ══════════════════════════
    HERO
 ══════════════════════════ */
-.hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;
-  position:relative;overflow:hidden;
-  padding-top:56px;
-}
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      padding-top: 56px;
+    }
 
-/* animated halftone dots bg */
-.hero-dots{
-  position:absolute;inset:0;
-  background-image:radial-gradient(circle,rgba(212,168,67,.18) 1px,transparent 1px);
-  background-size:28px 28px;
-  mask-image:radial-gradient(ellipse 70% 80% at 70% 50%,black 0%,transparent 80%);
-  animation:dotDrift 30s linear infinite;
-}
-@keyframes dotDrift{0%{background-position:0 0}100%{background-position:28px 28px}}
+    /* animated halftone dots bg */
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(212, 168, 67, .18) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 70% 80% at 70% 50%, black 0%, transparent 80%);
+      animation: dotDrift 30s linear infinite;
+    }
 
-/* big decorative text */
-.hero-watermark{
-  position:absolute;bottom:-0.1em;right:-.03em;
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(14rem,28vw,32rem);
-  font-weight:700;font-style:italic;
-  line-height:1;
-  color:transparent;
-  -webkit-text-stroke:1px rgba(212,168,67,.06);
-  pointer-events:none;user-select:none;
-  letter-spacing:-.04em;
-}
+    @keyframes dotDrift {
+      0% {
+        background-position: 0 0
+      }
 
-.hero-body{
-  flex:1;display:flex;flex-direction:column;justify-content:center;
-  padding:3rem 2.5rem 2rem;
-  position:relative;z-index:2;
-  max-width:900px;
-}
+      100% {
+        background-position: 28px 28px
+      }
+    }
 
-.hero-chip{
-  display:inline-flex;align-items:center;gap:.6rem;
-  background:rgba(212,168,67,.1);
-  border:1px solid rgba(212,168,67,.25);
-  border-radius:2px;
-  padding:.3rem .9rem;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--amber);margin-bottom:2rem;
-  width:fit-content;
-  opacity:0;animation:fadeUp .8s ease forwards .3s;
-}
-.hero-chip::before{content:'';width:6px;height:6px;background:var(--amber);border-radius:50%;animation:blink 1.5s ease-in-out infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+    /* big decorative text */
+    .hero-watermark {
+      position: absolute;
+      bottom: -0.1em;
+      right: -.03em;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(14rem, 28vw, 32rem);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(212, 168, 67, .06);
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -.04em;
+    }
 
-.hero-h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3.2rem,8vw,8.5rem);
-  font-weight:300;line-height:.95;
-  letter-spacing:-.02em;
-  color:var(--white);
-  margin-bottom:2rem;
-}
-.hero-h1 .ln{display:block;overflow:hidden}
-.hero-h1 .ln span{display:block;opacity:0;transform:translateY(105%)}
-.hero-h1 .ln:nth-child(1) span{animation:slideUp .9s cubic-bezier(.16,1,.3,1) forwards .45s}
-.hero-h1 .ln:nth-child(2) span{animation:slideUp .9s cubic-bezier(.16,1,.3,1) forwards .6s}
-.hero-h1 .ln:nth-child(3) span{animation:slideUp .9s cubic-bezier(.16,1,.3,1) forwards .75s}
-.hero-h1 .gilt{color:var(--amber);font-style:italic}
-.hero-h1 .tl{color:var(--teal2)}
+    .hero-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 2.5rem 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
 
-.hero-sub{
-  font-family:'Noto Serif',serif;font-style:italic;
-  font-size:1rem;color:var(--muted);
-  max-width:500px;line-height:1.9;
-  opacity:0;animation:fadeUp .8s ease forwards 1.1s;
-}
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: rgba(212, 168, 67, .1);
+      border: 1px solid rgba(212, 168, 67, .25);
+      border-radius: 2px;
+      padding: .3rem .9rem;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 2rem;
+      width: fit-content;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards .3s;
+    }
 
-.hero-meta{
-  display:flex;gap:2.5rem;flex-wrap:wrap;
-  margin-top:2.5rem;
-  opacity:0;animation:fadeUp .8s ease forwards 1.3s;
-}
-.hmeta{text-align:left}
-.hmeta-val{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2rem;font-weight:600;color:var(--amber);line-height:1;
-}
-.hmeta-key{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dust);margin-top:.15rem;
-}
+    .hero-chip::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--amber);
+      border-radius: 50%;
+      animation: blink 1.5s ease-in-out infinite
+    }
 
-.hero-footer{
-  border-top:1px solid var(--rule);
-  display:flex;justify-content:space-between;align-items:center;
-  padding:1.2rem 2.5rem;
-  position:relative;z-index:2;
-  opacity:0;animation:fadeUp .8s ease forwards 1.5s;
-}
-.hero-footer-l{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--dust);
-}
-.scroll-cue{
-  display:flex;align-items:center;gap:.7rem;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);
-}
-.scroll-cue-line{
-  width:36px;height:1px;
-  background:linear-gradient(to right,var(--amber),transparent);
-  animation:scrollLine 2s ease-in-out infinite;
-}
-@keyframes scrollLine{0%,100%{opacity:1}50%{opacity:.2}}
+    @keyframes blink {
 
-/* ══════════════════════════
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .2
+      }
+    }
+
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 8vw, 8.5rem);
+      font-weight: 300;
+      line-height: .95;
+      letter-spacing: -.02em;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .hero-h1 .ln {
+      display: block;
+      overflow: hidden
+    }
+
+    .hero-h1 .ln span {
+      display: block;
+      opacity: 0;
+      transform: translateY(105%)
+    }
+
+    .hero-h1 .ln:nth-child(1) span {
+      animation: slideUp .9s cubic-bezier(.16, 1, .3, 1) forwards .45s
+    }
+
+    .hero-h1 .ln:nth-child(2) span {
+      animation: slideUp .9s cubic-bezier(.16, 1, .3, 1) forwards .6s
+    }
+
+    .hero-h1 .ln:nth-child(3) span {
+      animation: slideUp .9s cubic-bezier(.16, 1, .3, 1) forwards .75s
+    }
+
+    .hero-h1 .gilt {
+      color: var(--amber);
+      font-style: italic
+    }
+
+    .hero-h1 .tl {
+      color: var(--teal2)
+    }
+
+    .hero-sub {
+      font-family: 'Noto Serif', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 500px;
+      line-height: 1.9;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.1s;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.3s;
+    }
+
+    .hmeta {
+      text-align: left
+    }
+
+    .hmeta-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--amber);
+      line-height: 1;
+    }
+
+    .hmeta-key {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--dust);
+      margin-top: .15rem;
+    }
+
+    .hero-footer {
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2.5rem;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeUp .8s ease forwards 1.5s;
+    }
+
+    .hero-footer-l {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--dust);
+    }
+
+    .scroll-cue {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .scroll-cue-line {
+      width: 36px;
+      height: 1px;
+      background: linear-gradient(to right, var(--amber), transparent);
+      animation: scrollLine 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLine {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .2
+      }
+    }
+
+    /* ══════════════════════════
    SHARED LAYOUT
 ══════════════════════════ */
-.wrap{max-width:1080px;margin:0 auto;padding:0 2.5rem}
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2.5rem
+    }
 
-.sec-label{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--amber);
-  display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;
-}
-.sec-label::before{content:'';width:24px;height:1px;background:var(--amber);flex-shrink:0}
+    .sec-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .4em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: 1rem;
+    }
 
-.sec-h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2rem,5vw,3.8rem);
-  font-weight:300;line-height:1.1;
-  letter-spacing:-.02em;color:var(--white);
-}
-.sec-h2 i{color:var(--amber)}
-.sec-h2 .tc{color:var(--teal2)}
-.sec-h2 .cc{color:var(--coral2)}
+    .sec-label::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--amber);
+      flex-shrink: 0
+    }
 
-/* reveal */
-.rv{opacity:0;transform:translateY(32px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
-.rv.on{opacity:1;transform:none}
-.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}.rv.d4{transition-delay:.48s}
+    .sec-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--white);
+    }
 
-/* ══════════════════════════
+    .sec-h2 i {
+      color: var(--amber)
+    }
+
+    .sec-h2 .tc {
+      color: var(--teal2)
+    }
+
+    .sec-h2 .cc {
+      color: var(--coral2)
+    }
+
+    /* reveal */
+    .rv {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .85s cubic-bezier(.16, 1, .3, 1), transform .85s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .rv.on {
+      opacity: 1;
+      transform: none
+    }
+
+    .rv.d1 {
+      transition-delay: .12s
+    }
+
+    .rv.d2 {
+      transition-delay: .24s
+    }
+
+    .rv.d3 {
+      transition-delay: .36s
+    }
+
+    .rv.d4 {
+      transition-delay: .48s
+    }
+
+    /* ══════════════════════════
    INTRO STRIP
 ══════════════════════════ */
-.intro-strip{
-  background:var(--deep);
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  padding:5rem 0;
-}
-.intro-grid{
-  display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;
-}
-.intro-aside{
-  padding-top:.5rem;border-top:2px solid var(--amber);
-}
-.intro-aside-label{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--amber);margin-bottom:.8rem;display:block;
-}
-.intro-aside p{font-size:.92rem;color:var(--muted);line-height:1.9;font-style:italic}
-.intro-body p{font-size:1.05rem;color:var(--body);line-height:1.95;margin-bottom:1.3rem}
-.intro-body p:first-child::first-letter{
-  font-family:'Cormorant Garamond',serif;
-  font-size:4.5rem;font-weight:600;float:left;
-  line-height:.82;margin-right:.08em;margin-top:.06em;color:var(--amber);
-}
-@media(max-width:700px){.intro-grid{grid-template-columns:1fr}}
+    .intro-strip {
+      background: var(--deep);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 5rem 0;
+    }
 
-/* ══════════════════════════
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .intro-aside {
+      padding-top: .5rem;
+      border-top: 2px solid var(--amber);
+    }
+
+    .intro-aside-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: .8rem;
+      display: block;
+    }
+
+    .intro-aside p {
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.9;
+      font-style: italic
+    }
+
+    .intro-body p {
+      font-size: 1.05rem;
+      color: var(--body);
+      line-height: 1.95;
+      margin-bottom: 1.3rem
+    }
+
+    .intro-body p:first-child::first-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 600;
+      float: left;
+      line-height: .82;
+      margin-right: .08em;
+      margin-top: .06em;
+      color: var(--amber);
+    }
+
+    @media(max-width:700px) {
+      .intro-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* ══════════════════════════
    PART I — ROLES
 ══════════════════════════ */
-.part1{padding:7rem 0}
-.part1-head{
-  display:grid;grid-template-columns:auto 1fr;gap:3rem;
-  align-items:end;margin-bottom:5rem;
-  padding-bottom:2.5rem;border-bottom:1px solid var(--rule);
-}
-@media(max-width:700px){.part1-head{grid-template-columns:1fr;gap:1rem}}
+    .part1 {
+      padding: 7rem 0
+    }
 
-.roles{display:flex;flex-direction:column}
-.role{
-  display:grid;grid-template-columns:60px 1fr auto;
-  gap:2rem;align-items:start;
-  padding:2.8rem 0;
-  border-top:1px solid var(--rule);
-  position:relative;
-  transition:background .3s;
-  cursor:none;
-}
-.role::after{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
-  background:var(--amber);opacity:0;transform:scaleY(0);transform-origin:bottom;
-  transition:opacity .3s,transform .4s cubic-bezier(.16,1,.3,1);
-}
-.role:hover::after{opacity:1;transform:scaleY(1)}
-.role:hover{background:rgba(212,168,67,.03)}
+    .part1-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-.role-n{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2.8rem;font-weight:300;font-style:italic;
-  color:var(--rule);line-height:1;padding-top:.2rem;
-  transition:color .3s;
-}
-.role:hover .role-n{color:rgba(212,168,67,.3)}
+    @media(max-width:700px) {
+      .part1-head {
+        grid-template-columns: 1fr;
+        gap: 1rem
+      }
+    }
 
-.role-info{}
-.role-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.45rem;font-weight:600;
-  color:var(--bright);margin-bottom:.6rem;line-height:1.25;
-}
-.role-text{font-size:.9rem;color:var(--muted);line-height:1.85;max-width:58ch}
-.role-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
-.tag{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--teal);border:1px solid rgba(61,158,140,.3);
-  padding:.2rem .65rem;border-radius:1px;
-  transition:background .2s,color .2s;
-}
-.tag:hover{background:var(--teal);color:var(--ink)}
+    .roles {
+      display: flex;
+      flex-direction: column
+    }
 
-.role-icon{
-  font-size:2rem;opacity:.15;align-self:flex-start;
-  padding-top:.3rem;transition:opacity .3s;user-select:none;
-}
-.role:hover .role-icon{opacity:.35}
+    .role {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: 2rem;
+      align-items: start;
+      padding: 2.8rem 0;
+      border-top: 1px solid var(--rule);
+      position: relative;
+      transition: background .3s;
+      cursor: none;
+    }
 
-@media(max-width:600px){
-  .role{grid-template-columns:40px 1fr;gap:1rem}
-  .role-icon{display:none}
-}
+    .role::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--amber);
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: opacity .3s, transform .4s cubic-bezier(.16, 1, .3, 1);
+    }
 
-/* ══════════════════════════
+    .role:hover::after {
+      opacity: 1;
+      transform: scaleY(1)
+    }
+
+    .role:hover {
+      background: rgba(212, 168, 67, .03)
+    }
+
+    .role-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--rule);
+      line-height: 1;
+      padding-top: .2rem;
+      transition: color .3s;
+    }
+
+    .role:hover .role-n {
+      color: rgba(212, 168, 67, .3)
+    }
+
+    .role-info {}
+
+    .role-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--bright);
+      margin-bottom: .6rem;
+      line-height: 1.25;
+    }
+
+    .role-text {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 58ch
+    }
+
+    .role-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: 1rem
+    }
+
+    .tag {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .56rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid rgba(61, 158, 140, .3);
+      padding: .2rem .65rem;
+      border-radius: 1px;
+      transition: background .2s, color .2s;
+    }
+
+    .tag:hover {
+      background: var(--teal);
+      color: var(--ink)
+    }
+
+    .role-icon {
+      font-size: 2rem;
+      opacity: .15;
+      align-self: flex-start;
+      padding-top: .3rem;
+      transition: opacity .3s;
+      user-select: none;
+    }
+
+    .role:hover .role-icon {
+      opacity: .35
+    }
+
+    @media(max-width:600px) {
+      .role {
+        grid-template-columns: 40px 1fr;
+        gap: 1rem
+      }
+
+      .role-icon {
+        display: none
+      }
+    }
+
+    /* ══════════════════════════
    QUOTE
 ══════════════════════════ */
-.quote-belt{
-  background:var(--panel);
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  padding:6rem 0;position:relative;overflow:hidden;
-}
-.quote-belt::before{
-  content:'\201C';
-  position:absolute;top:-1rem;left:.5rem;
-  font-family:'Cormorant Garamond',serif;
-  font-size:28rem;font-weight:700;font-style:italic;
-  color:var(--amber);opacity:.04;
-  line-height:1;pointer-events:none;user-select:none;
-}
-.quote-belt blockquote{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.5rem,3.2vw,2.6rem);
-  font-weight:300;font-style:italic;
-  color:var(--white);line-height:1.45;
-  max-width:820px;
-}
-.quote-belt blockquote strong{
-  color:var(--amber);font-style:normal;font-weight:600;
-}
-.quote-cite{
-  margin-top:2rem;display:flex;align-items:center;gap:1.2rem;
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--dust);
-}
-.quote-cite::before{content:'';width:40px;height:1px;background:var(--amber);flex-shrink:0}
+    .quote-belt {
+      background: var(--panel);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* ══════════════════════════
+    .quote-belt::before {
+      content: '\201C';
+      position: absolute;
+      top: -1rem;
+      left: .5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--amber);
+      opacity: .04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .quote-belt blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3.2vw, 2.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.45;
+      max-width: 820px;
+    }
+
+    .tech-chain {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .tc-step {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--dust);
+      border: 1px solid var(--rule);
+      padding: .25rem .7rem;
+      transition: color .3s, border-color .3s, background .3s;
+    }
+
+    .tc-step.active {
+      color: var(--amber);
+      border-color: rgba(212, 168, 67, .4);
+      background: rgba(212, 168, 67, .07)
+    }
+
+    .tc-arr {
+      color: var(--dust);
+      font-size: .7rem;
+      opacity: .5
+    }
+
+    .role:hover .tc-step {
+      color: var(--muted);
+      border-color: var(--dust)
+    }
+
+    .role:hover .tc-step.active {
+      color: var(--amber2);
+      border-color: var(--amber);
+      background: rgba(212, 168, 67, .12)
+    }
+
+    .contra-grid {
+      grid-template-columns: 1fr 1fr 1fr
+    }
+
+    @media(max-width:900px) {
+      .contra-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:580px) {
+      .contra-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .verdict-box {
+      border: 1px solid var(--rule);
+      background: var(--card);
+      margin-top: 2.5rem;
+      overflow: hidden;
+    }
+
+    .vb-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr
+    }
+
+    .vb-half {
+      padding: 1.8rem 2rem;
+      position: relative
+    }
+
+    .vb-half::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .4s
+    }
+
+    .vb-half.positive {
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .vb-half.negative {
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .vb-half.positive::after {
+      background: linear-gradient(135deg, rgba(82, 201, 179, .05), transparent)
+    }
+
+    .vb-half.negative::after {
+      background: linear-gradient(135deg, rgba(201, 90, 58, .05), transparent)
+    }
+
+    .verdict-box:hover .vb-half::after {
+      opacity: 1
+    }
+
+    .vb-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: .7rem;
+    }
+
+    .vb-half.positive .vb-label {
+      color: var(--teal2)
+    }
+
+    .vb-half.negative .vb-label {
+      color: var(--coral2)
+    }
+
+    .vb-half p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.8
+    }
+
+    .vb-core {
+      padding: 1.5rem 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--bright);
+      line-height: 1.6;
+      background: rgba(212, 168, 67, .04);
+      border-top: 1px solid var(--rule);
+    }
+
+    .vb-core em {
+      color: var(--amber);
+      font-style: normal;
+      font-weight: 600
+    }
+
+    @media(max-width:580px) {
+      .vb-row {
+        grid-template-columns: 1fr
+      }
+
+      .vb-half.positive {
+        border-right: none
+      }
+    }
+
+    .quote-belt blockquote strong {
+      color: var(--amber);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .quote-cite {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--dust);
+    }
+
+    .quote-cite::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--amber);
+      flex-shrink: 0
+    }
+
+    /* ══════════════════════════
    PART II — CONTRADICTIONS
 ══════════════════════════ */
-.part2{padding:7rem 0;background:var(--deep)}
-.part2-head{
-  display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:end;
-  margin-bottom:5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--rule);
-}
-@media(max-width:700px){.part2-head{grid-template-columns:1fr;gap:1rem}}
+    .part2 {
+      padding: 7rem 0;
+      background: var(--deep)
+    }
 
-.contra-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:1px;background:var(--rule);
-  border:1px solid var(--rule);
-}
-.contra{
-  background:var(--deep);padding:2.5rem;
-  position:relative;overflow:hidden;
-  transition:background .35s;
-}
-.contra:hover{background:var(--panel)}
-.contra-bar{
-  position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:var(--coral);transform:scaleX(0);transform-origin:left;
-  transition:transform .45s cubic-bezier(.16,1,.3,1);
-}
-.contra:hover .contra-bar{transform:scaleX(1)}
-.contra-glyph{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2.8rem;font-weight:700;color:var(--coral);
-  opacity:.2;line-height:1;margin-bottom:1.2rem;
-  transition:opacity .3s;user-select:none;
-}
-.contra:hover .contra-glyph{opacity:.4}
-.contra-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.3rem;font-weight:600;color:var(--bright);
-  margin-bottom:.7rem;line-height:1.3;
-}
-.contra-body{font-size:.88rem;color:var(--muted);line-height:1.85}
-@media(max-width:600px){.contra-grid{grid-template-columns:1fr}}
+    .part2-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-/* ══════════════════════════
+    @media(max-width:700px) {
+      .part2-head {
+        grid-template-columns: 1fr;
+        gap: 1rem
+      }
+    }
+
+    .contra-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+
+    .contra {
+      background: var(--deep);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background .35s;
+    }
+
+    .contra:hover {
+      background: var(--panel)
+    }
+
+    .contra-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--coral);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .45s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .contra:hover .contra-bar {
+      transform: scaleX(1)
+    }
+
+    .contra-glyph {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--coral);
+      opacity: .2;
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      transition: opacity .3s;
+      user-select: none;
+    }
+
+    .contra:hover .contra-glyph {
+      opacity: .4
+    }
+
+    .contra-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--bright);
+      margin-bottom: .7rem;
+      line-height: 1.3;
+    }
+
+    .contra-body {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.85
+    }
+
+    @media(max-width:600px) {
+      .contra-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* ══════════════════════════
    CONCLUSION
 ══════════════════════════ */
-.conclusion{
-  padding:8rem 0;
-  background:
-    radial-gradient(ellipse 55% 45% at 50% 100%,rgba(212,168,67,.07) 0%,transparent 70%),
-    var(--ink);
-  text-align:center;
-}
-.concl-inner{max-width:720px;margin:0 auto}
-.concl-ornament{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.4rem;font-style:italic;color:var(--amber);
-  opacity:.5;letter-spacing:.5em;margin-bottom:2.5rem;
-  display:block;
-}
-.concl-h2{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2rem,5vw,3.5rem);font-weight:300;
-  line-height:1.15;color:var(--white);margin-bottom:2.5rem;
-  letter-spacing:-.01em;
-}
-.concl-h2 i{color:var(--amber)}
-.concl-p{
-  color:var(--muted);font-size:1rem;line-height:1.95;
-  text-align:left;margin-bottom:1.3rem;
-}
-.concl-rule{
-  width:1px;height:70px;
-  background:linear-gradient(to bottom,var(--amber),transparent);
-  margin:3.5rem auto;
-}
-.concl-final{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.2rem;font-style:italic;color:var(--amber);
-}
+    .conclusion {
+      padding: 8rem 0;
+      background:
+        radial-gradient(ellipse 55% 45% at 50% 100%, rgba(212, 168, 67, .07) 0%, transparent 70%),
+        var(--ink);
+      text-align: center;
+    }
 
-/* ══════════════════════════
+    .concl-inner {
+      max-width: 720px;
+      margin: 0 auto
+    }
+
+    .concl-ornament {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      color: var(--amber);
+      opacity: .5;
+      letter-spacing: .5em;
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+
+    .concl-h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+      letter-spacing: -.01em;
+    }
+
+    .concl-h2 i {
+      color: var(--amber)
+    }
+
+    .concl-p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.95;
+      text-align: left;
+      margin-bottom: 1.3rem;
+    }
+
+    .concl-rule {
+      width: 1px;
+      height: 70px;
+      background: linear-gradient(to bottom, var(--amber), transparent);
+      margin: 3.5rem auto;
+    }
+
+    .concl-final {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    /* ══════════════════════════
    QUIZ SECTION
 ══════════════════════════ */
-.quiz-sec{
-  padding:7rem 0;
-  background:var(--panel);
-  border-top:1px solid var(--rule);
-}
-.quiz-head{
-  display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:end;
-  margin-bottom:4rem;padding-bottom:2.5rem;border-bottom:1px solid var(--rule);
-}
-@media(max-width:700px){.quiz-head{grid-template-columns:1fr;gap:1rem}}
+    .quiz-sec {
+      padding: 7rem 0;
+      background: var(--panel);
+      border-top: 1px solid var(--rule);
+    }
 
-/* START */
-.q-start{
-  border:1px solid var(--rule);background:var(--card);
-  padding:4rem 2rem;text-align:center;
-}
-.q-start-icon{font-size:2.8rem;margin-bottom:1rem;animation:iconPulse 2.2s ease-in-out infinite}
-@keyframes iconPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-.q-start-desc{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--dust);margin-bottom:2.5rem;
-}
-.q-btn{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;
-  background:var(--amber);color:var(--ink);border:none;
-  padding:.9rem 2.8rem;cursor:none;
-  transition:background .2s,transform .2s;
-}
-.q-btn:hover{background:var(--amber2);transform:translateY(-2px)}
+    .quiz-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: end;
+      margin-bottom: 4rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
 
-/* METABAR */
-.q-metabar{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:.9rem 1.5rem;border:1px solid var(--rule);
-  background:var(--card);margin-bottom:.75rem;
-}
-.qm-item{text-align:center}
-.qm-lbl{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--dust);display:block;margin-bottom:.15rem;
-}
-.qm-val{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.5rem;font-weight:600;color:var(--amber);line-height:1;
-}
-/* timer ring */
-.t-ring{position:relative;width:48px;height:48px}
-.t-ring svg{width:100%;height:100%}
-#t-num{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-family:'Josefin Sans',sans-serif;font-size:.8rem;font-weight:600;color:var(--amber);
-}
-.t-ring.red #t-circle{stroke:var(--coral2)}
-.t-ring.red #t-num{color:var(--coral2)}
+    @media(max-width:700px) {
+      .quiz-head {
+        grid-template-columns: 1fr;
+        gap: 1rem
+      }
+    }
 
-/* progress */
-.q-prog-bar{height:2px;background:var(--rule);margin-bottom:1.5rem}
-#q-prog{height:100%;background:linear-gradient(to right,var(--amber),var(--teal2));transition:width .5s ease}
+    /* START */
+    .q-start {
+      border: 1px solid var(--rule);
+      background: var(--card);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
 
-/* question box */
-.q-qbox{
-  border-left:3px solid var(--amber);background:var(--card);
-  padding:1.8rem 2rem;margin-bottom:1.5rem;
-  min-height:90px;display:flex;align-items:center;
-}
-.q-text{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.05rem,2.4vw,1.5rem);
-  font-weight:400;color:var(--white);line-height:1.45;
-}
+    .q-start-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      animation: iconPulse 2.2s ease-in-out infinite
+    }
 
-/* answer grid */
-.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.2rem}
-.a-btn{
-  background:var(--card);border:1px solid var(--rule);
-  color:var(--body);padding:1.1rem 1.3rem;
-  text-align:left;cursor:none;
-  font-family:'Noto Serif',serif;font-size:.88rem;line-height:1.5;
-  display:flex;align-items:flex-start;gap:.7rem;
-  transition:border-color .2s,background .2s,transform .15s;
-  position:relative;overflow:hidden;
-}
-.a-btn:hover:not(:disabled){
-  border-color:var(--amber);background:rgba(212,168,67,.06);transform:translateY(-2px);
-}
-.a-btn:disabled{cursor:not-allowed}
-.a-ltr{
-  font-family:'Josefin Sans',sans-serif;font-size:.6rem;
-  letter-spacing:.12em;color:var(--amber);
-  background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.25);
-  padding:.18rem .5rem;flex-shrink:0;margin-top:.1rem;
-}
-.a-btn.ok{background:rgba(82,201,179,.1)!important;border-color:var(--teal2)!important}
-.a-btn.ok .a-ltr{color:var(--teal2);background:rgba(82,201,179,.15);border-color:var(--teal2)}
-.a-btn.no{background:rgba(224,107,72,.1)!important;border-color:var(--coral2)!important}
-.a-btn.no .a-ltr{color:var(--coral2);background:rgba(224,107,72,.15);border-color:var(--coral2)}
-.a-btn.dm{opacity:.3}
+    @keyframes iconPulse {
 
-/* feedback */
-.q-fb{
-  padding:.9rem 1.3rem;display:flex;align-items:center;gap:.9rem;
-  font-family:'Josefin Sans',sans-serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;
-  animation:fbIn .3s ease;
-}
-@keyframes fbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.q-fb.ok-fb{border-left:3px solid var(--teal2);background:rgba(82,201,179,.06);color:var(--teal2)}
-.q-fb.no-fb{border-left:3px solid var(--coral2);background:rgba(224,107,72,.06);color:var(--coral2)}
-.fb-pts{margin-left:auto;color:var(--amber);font-size:.85rem;font-weight:600}
+      0%,
+      100% {
+        transform: scale(1)
+      }
 
-/* result */
-.q-result{border:1px solid var(--rule);background:var(--card);padding:4rem 2rem;text-align:center}
-.res-icon{font-size:3.5rem;margin-bottom:.8rem}
-.res-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2.2rem;font-weight:600;font-style:italic;color:var(--amber);margin-bottom:1.5rem;
-}
-.res-big{
-  font-family:'Cormorant Garamond',serif;
-  font-size:5.5rem;font-weight:300;color:var(--white);line-height:1;
-}
-.res-lbl{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.58rem;letter-spacing:.35em;text-transform:uppercase;
-  color:var(--dust);margin:.3rem 0 2rem;
-}
-.res-stats{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1rem}
-.rs{text-align:center;padding:.9rem 1.4rem;border:1px solid var(--rule);min-width:100px}
-.rs-n{
-  font-family:'Cormorant Garamond',serif;
-  font-size:2rem;font-weight:600;line-height:1;margin-bottom:.2rem;
-}
-.rs-k{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dust);
-}
-@media(max-width:580px){
-  .q-grid{grid-template-columns:1fr}
-  .quiz-head{grid-template-columns:1fr;gap:1rem}
-}
+      50% {
+        transform: scale(1.1)
+      }
+    }
 
-/* ══════════════════════════
+    .q-start-desc {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--dust);
+      margin-bottom: 2.5rem;
+    }
+
+    .q-btn {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .7rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: var(--amber);
+      color: var(--ink);
+      border: none;
+      padding: .9rem 2.8rem;
+      cursor: none;
+      transition: background .2s, transform .2s;
+    }
+
+    .q-btn:hover {
+      background: var(--amber2);
+      transform: translateY(-2px)
+    }
+
+    /* METABAR */
+    .q-metabar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .9rem 1.5rem;
+      border: 1px solid var(--rule);
+      background: var(--card);
+      margin-bottom: .75rem;
+    }
+
+    .qm-item {
+      text-align: center
+    }
+
+    .qm-lbl {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .55rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--dust);
+      display: block;
+      margin-bottom: .15rem;
+    }
+
+    .qm-val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--amber);
+      line-height: 1;
+    }
+
+    /* timer ring */
+    .t-ring {
+      position: relative;
+      width: 48px;
+      height: 48px
+    }
+
+    .t-ring svg {
+      width: 100%;
+      height: 100%
+    }
+
+    #t-num {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--amber);
+    }
+
+    .t-ring.red #t-circle {
+      stroke: var(--coral2)
+    }
+
+    .t-ring.red #t-num {
+      color: var(--coral2)
+    }
+
+    /* progress */
+    .q-prog-bar {
+      height: 2px;
+      background: var(--rule);
+      margin-bottom: 1.5rem
+    }
+
+    #q-prog {
+      height: 100%;
+      background: linear-gradient(to right, var(--amber), var(--teal2));
+      transition: width .5s ease
+    }
+
+    /* question box */
+    .q-qbox {
+      border-left: 3px solid var(--amber);
+      background: var(--card);
+      padding: 1.8rem 2rem;
+      margin-bottom: 1.5rem;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+    }
+
+    .q-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.45;
+    }
+
+    /* answer grid */
+    .q-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .6rem;
+      margin-bottom: 1.2rem
+    }
+
+    .a-btn {
+      background: var(--card);
+      border: 1px solid var(--rule);
+      color: var(--body);
+      padding: 1.1rem 1.3rem;
+      text-align: left;
+      cursor: none;
+      font-family: 'Noto Serif', serif;
+      font-size: .88rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+      gap: .7rem;
+      transition: border-color .2s, background .2s, transform .15s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .a-btn:hover:not(:disabled) {
+      border-color: var(--amber);
+      background: rgba(212, 168, 67, .06);
+      transform: translateY(-2px);
+    }
+
+    .a-btn:disabled {
+      cursor: not-allowed
+    }
+
+    .a-ltr {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .12em;
+      color: var(--amber);
+      background: rgba(212, 168, 67, .1);
+      border: 1px solid rgba(212, 168, 67, .25);
+      padding: .18rem .5rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .a-btn.ok {
+      background: rgba(82, 201, 179, .1) !important;
+      border-color: var(--teal2) !important
+    }
+
+    .a-btn.ok .a-ltr {
+      color: var(--teal2);
+      background: rgba(82, 201, 179, .15);
+      border-color: var(--teal2)
+    }
+
+    .a-btn.no {
+      background: rgba(224, 107, 72, .1) !important;
+      border-color: var(--coral2) !important
+    }
+
+    .a-btn.no .a-ltr {
+      color: var(--coral2);
+      background: rgba(224, 107, 72, .15);
+      border-color: var(--coral2)
+    }
+
+    .a-btn.dm {
+      opacity: .3
+    }
+
+    /* feedback */
+    .q-fb {
+      padding: .9rem 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      animation: fbIn .3s ease;
+    }
+
+    @keyframes fbIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .q-fb.ok-fb {
+      border-left: 3px solid var(--teal2);
+      background: rgba(82, 201, 179, .06);
+      color: var(--teal2)
+    }
+
+    .q-fb.no-fb {
+      border-left: 3px solid var(--coral2);
+      background: rgba(224, 107, 72, .06);
+      color: var(--coral2)
+    }
+
+    .fb-pts {
+      margin-left: auto;
+      color: var(--amber);
+      font-size: .85rem;
+      font-weight: 600
+    }
+
+    /* result */
+    .q-result {
+      border: 1px solid var(--rule);
+      background: var(--card);
+      padding: 4rem 2rem;
+      text-align: center
+    }
+
+    .res-icon {
+      font-size: 3.5rem;
+      margin-bottom: .8rem
+    }
+
+    .res-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .res-big {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5.5rem;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .res-lbl {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--dust);
+      margin: .3rem 0 2rem;
+    }
+
+    .res-stats {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem
+    }
+
+    .rs {
+      text-align: center;
+      padding: .9rem 1.4rem;
+      border: 1px solid var(--rule);
+      min-width: 100px
+    }
+
+    .rs-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: .2rem;
+    }
+
+    .rs-k {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .55rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--dust);
+    }
+
+    @media(max-width:580px) {
+      .q-grid {
+        grid-template-columns: 1fr
+      }
+
+      .quiz-head {
+        grid-template-columns: 1fr;
+        gap: 1rem
+      }
+    }
+
+    /* ══════════════════════════
    FOOTER
 ══════════════════════════ */
-footer{
-  border-top:1px solid var(--rule);padding:1.8rem 2.5rem;
-  display:flex;justify-content:space-between;align-items:center;
-  background:var(--deep);
-}
-.ft-l{
-  font-family:'Josefin Sans',sans-serif;
-  font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--dust);
-}
-.ft-r{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1rem;font-style:italic;color:var(--amber);
-}
-@media(max-width:600px){footer{flex-direction:column;gap:.8rem;text-align:center}}
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.8rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--deep);
+    }
 
-/* ══════════════════════════
+    .ft-l {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--dust);
+    }
+
+    .ft-r {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    @media(max-width:600px) {
+      footer {
+        flex-direction: column;
+        gap: .8rem;
+        text-align: center
+      }
+    }
+
+    /* ══════════════════════════
    KEYFRAMES
 ══════════════════════════ */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes slideUp{to{opacity:1;transform:none}}
-#scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(to right,var(--amber),var(--teal2));z-index:600;transition:width .08s linear}
-#particle-canvas{position:absolute;inset:0;pointer-events:none;z-index:1}
-.tw-cursor{display:inline-block;width:2px;height:.85em;background:var(--amber);margin-left:2px;animation:twBlink .75s step-end infinite;vertical-align:text-bottom}
-@keyframes twBlink{0%,100%{opacity:1}50%{opacity:0}}
-.line-draw{display:block;width:0;height:1px;background:linear-gradient(to right,var(--amber),var(--teal2),var(--coral));transition:width 1.4s cubic-bezier(.16,1,.3,1);margin:2.5rem 0}
-.line-draw.on{width:100%}
-.quote-belt blockquote strong{background:linear-gradient(90deg,var(--amber),var(--amber2),var(--teal2),var(--amber));background-size:250% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
-@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
-.float-glyph{position:absolute;font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:300;color:rgba(212,168,67,.05);pointer-events:none;user-select:none}
-@keyframes floatY{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-22px) rotate(4deg)}}
-.role:hover .role-n{color:var(--amber);text-shadow:0 0 40px rgba(212,168,67,.45)}
-</style>
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @keyframes slideUp {
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(to right, var(--amber), var(--teal2));
+      z-index: 600;
+      transition: width .08s linear
+    }
+
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1
+    }
+
+    .tw-cursor {
+      display: inline-block;
+      width: 2px;
+      height: .85em;
+      background: var(--amber);
+      margin-left: 2px;
+      animation: twBlink .75s step-end infinite;
+      vertical-align: text-bottom
+    }
+
+    @keyframes twBlink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0
+      }
+    }
+
+    .line-draw {
+      display: block;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(to right, var(--amber), var(--teal2), var(--coral));
+      transition: width 1.4s cubic-bezier(.16, 1, .3, 1);
+      margin: 2.5rem 0
+    }
+
+    .line-draw.on {
+      width: 100%
+    }
+
+    .tech-chain {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .tc-step {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .58rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--dust);
+      border: 1px solid var(--rule);
+      padding: .25rem .7rem;
+      transition: color .3s, border-color .3s, background .3s;
+    }
+
+    .tc-step.active {
+      color: var(--amber);
+      border-color: rgba(212, 168, 67, .4);
+      background: rgba(212, 168, 67, .07)
+    }
+
+    .tc-arr {
+      color: var(--dust);
+      font-size: .7rem;
+      opacity: .5
+    }
+
+    .role:hover .tc-step {
+      color: var(--muted);
+      border-color: var(--dust)
+    }
+
+    .role:hover .tc-step.active {
+      color: var(--amber2);
+      border-color: var(--amber);
+      background: rgba(212, 168, 67, .12)
+    }
+
+    .contra-grid {
+      grid-template-columns: 1fr 1fr 1fr
+    }
+
+    @media(max-width:900px) {
+      .contra-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:580px) {
+      .contra-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .verdict-box {
+      border: 1px solid var(--rule);
+      background: var(--card);
+      margin-top: 2.5rem;
+      overflow: hidden;
+    }
+
+    .vb-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr
+    }
+
+    .vb-half {
+      padding: 1.8rem 2rem;
+      position: relative
+    }
+
+    .vb-half::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity .4s
+    }
+
+    .vb-half.positive {
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .vb-half.negative {
+      border-bottom: 1px solid var(--rule)
+    }
+
+    .vb-half.positive::after {
+      background: linear-gradient(135deg, rgba(82, 201, 179, .05), transparent)
+    }
+
+    .vb-half.negative::after {
+      background: linear-gradient(135deg, rgba(201, 90, 58, .05), transparent)
+    }
+
+    .verdict-box:hover .vb-half::after {
+      opacity: 1
+    }
+
+    .vb-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: .6rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      margin-bottom: .7rem;
+    }
+
+    .vb-half.positive .vb-label {
+      color: var(--teal2)
+    }
+
+    .vb-half.negative .vb-label {
+      color: var(--coral2)
+    }
+
+    .vb-half p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.8
+    }
+
+    .vb-core {
+      padding: 1.5rem 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--bright);
+      line-height: 1.6;
+      background: rgba(212, 168, 67, .04);
+      border-top: 1px solid var(--rule);
+    }
+
+    .vb-core em {
+      color: var(--amber);
+      font-style: normal;
+      font-weight: 600
+    }
+
+    @media(max-width:580px) {
+      .vb-row {
+        grid-template-columns: 1fr
+      }
+
+      .vb-half.positive {
+        border-right: none
+      }
+    }
+
+    .quote-belt blockquote strong {
+      background: linear-gradient(90deg, var(--amber), var(--amber2), var(--teal2), var(--amber));
+      background-size: 250% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 100% 0
+      }
+
+      100% {
+        background-position: -100% 0
+      }
+    }
+
+    .float-glyph {
+      position: absolute;
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(212, 168, 67, .05);
+      pointer-events: none;
+      user-select: none
+    }
+
+    @keyframes floatY {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-4deg)
+      }
+
+      50% {
+        transform: translateY(-22px) rotate(4deg)
+      }
+    }
+
+    .role:hover .role-n {
+      color: var(--amber);
+      text-shadow: 0 0 40px rgba(212, 168, 67, .45)
+    }
+  </style>
 </head>
+
 <body>
 
-<div id="scroll-progress"></div>
-<div class="cur" id="cur"></div>
-<div class="cur-o" id="curO"></div>
+  <div id="scroll-progress"></div>
+  <div class="cur" id="cur"></div>
+  <div class="cur-o" id="curO"></div>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">Kinh tế chính trị · 4.3.3</div>
-  <div class="nav-links">
-    <a href="#part1">Vai trò</a>
-    <a href="#part2">Mâu thuẫn</a>
-    <a href="#quiz">Quiz</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <canvas id="particle-canvas"></canvas>
-  <div class="hero-dots"></div>
-  <div class="hero-watermark">CNTB</div>
-
-  <div class="hero-body">
-    <div class="hero-chip">Chương 4 · Mục 4.3.3</div>
-
-    <h1 class="hero-h1">
-      <span class="ln"><span>Vai Trò</span></span>
-      <span class="ln"><span class="gilt">Lịch Sử</span></span>
-      <span class="ln"><span class="tl">CNTB</span></span>
-    </h1>
-
-    <p class="hero-sub">Một phân tích theo quan điểm kinh tế chính trị Mác–Lênin về vai trò và những giới hạn tất yếu của chủ nghĩa tư bản trong lịch sử phát triển nhân loại.</p>
-
-    <div class="hero-meta">
-      <div class="hmeta"><div class="hmeta-val"><span class="count-anim" data-target="3">0</span></div><div class="hmeta-key">Vai trò tích cực</div></div>
-      <div class="hmeta"><div class="hmeta-val"><span class="count-anim" data-target="4">0</span></div><div class="hmeta-key">Mâu thuẫn nội tại</div></div>
-      <div class="hmeta"><div class="hmeta-val"><span class="count-anim" data-target="1848">0</span></div><div class="hmeta-key">Năm Tuyên ngôn</div></div>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Kinh tế chính trị</div>
+    <div class="nav-links">
+      <a href="#part1">Vai trò</a>
+      <a href="#part2">Mâu thuẫn</a>
+      <a href="#quiz">Quiz</a>
     </div>
-  </div>
+  </nav>
 
-  <div class="hero-footer">
-    <div class="hero-footer-l">Kinh tế chính trị Mác–Lênin</div>
-    <div class="scroll-cue"><span>Khám phá</span><div class="scroll-cue-line"></div></div>
-  </div>
-</header>
+  <!-- HERO -->
+  <header class="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-dots"></div>
+    <div class="hero-watermark">CNTB</div>
 
-<!-- INTRO -->
-<section class="intro-strip">
-  <div class="wrap">
-    <div class="intro-grid rv">
-      <div class="intro-aside">
-        <span class="intro-aside-label">Khái quát chung</span>
-        <p>Chủ nghĩa tư bản là một giai đoạn lịch sử tất yếu của xã hội loài người. Nó vừa tạo ra những bước tiến văn minh vĩ đại, vừa chứa đựng những mâu thuẫn sâu sắc không thể hòa giải.</p>
-      </div>
-      <div class="intro-body">
-        <p>Theo quan điểm của kinh tế chính trị Mác–Lênin, chủ nghĩa tư bản ra đời sau chế độ phong kiến và đóng vai trò quan trọng trong việc thúc đẩy sự phát triển của lực lượng sản xuất, khoa học–công nghệ và tổ chức sản xuất xã hội. Chính Marx và Engels đã thừa nhận thẳng thắn trong Tuyên ngôn rằng giai cấp tư sản đã tạo ra những lực lượng sản xuất vĩ đại hơn tất cả các thế hệ trước cộng lại.</p>
-        <p>Song, cùng với những thành tựu đó là những mâu thuẫn nội tại mang tính cơ cấu — giữa tính xã hội của sản xuất và chế độ chiếm hữu tư nhân, giữa tăng trưởng và công bằng, giữa lợi nhuận và bền vững. Chính những mâu thuẫn này trở thành động lực lịch sử, đặt ra yêu cầu về những mô hình phát triển tiến bộ hơn.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="hero-body">
 
-<!-- PART I -->
-<section class="part1" id="part1">
-  <div class="wrap">
-    <div class="part1-head rv">
-      <div class="sec-label">Phần I</div>
-      <h2 class="sec-h2">Những đóng góp <i>lịch sử</i><br>không thể phủ nhận</h2>
-    <span class="line-draw rv"></span>
-    </div>
+      <h1 class="hero-h1">
+        <span class="ln"><span>Vai Trò</span></span>
+        <span class="ln"><span class="gilt">Lịch Sử</span></span>
+        <span class="ln"><span class="tl">CNTB</span></span>
+      </h1>
 
-    <div class="roles">
-      <div class="role rv d1">
-        <div class="role-n">01</div>
-        <div class="role-info">
-          <h3 class="role-title">Thúc đẩy lực lượng sản xuất phát triển vượt bậc</h3>
-          <p class="role-text">Trước chủ nghĩa tư bản, kinh tế chủ yếu dựa vào sản xuất thủ công nhỏ lẻ. Động lực lợi nhuận và cạnh tranh buộc các nhà tư bản liên tục đổi mới kỹ thuật — châm ngòi cho các cuộc cách mạng công nghiệp và đại công nghiệp, đưa năng suất lao động lên tầm cao chưa từng có trong lịch sử.</p>
-          <div class="role-tags">
-            <span class="tag">Cách mạng công nghiệp</span>
-            <span class="tag">Đổi mới kỹ thuật</span>
-            <span class="tag">Năng suất lao động</span>
-          </div>
+      <p class="hero-sub">Theo quan điểm của kinh tế chính trị Mác – Lênin, <strong style="color:var(--amber)">chủ
+          nghĩa tư bản là một
+          giai đoạn phát triển lịch sử của xã hội loài người.</strong> Nó ra đời sau chế độ phong kiến và đóng vai trò
+        quan trọng trong việc thúc đẩy sự phát triển của lực lượng sản xuất, khoa học – công nghệ và tổ chức sản xuất xã
+        hội.<br>
+        <br>
+        Chủ nghĩa tư bản vừa tạo ra <strong style="color:var(--bright)">những bước tiến lớn trong văn minh nhân
+          loại</strong>, vừa chứa đựng
+        <strong style="color:var(--bright)">những mâu thuẫn kinh tế – xã hội sâu sắc.</strong>
+      </p>
+
+      <div class="hero-meta">
+        <div class="hmeta">
+          <div class="hmeta-val"><span class="count-anim" data-target="3">0</span></div>
+          <div class="hmeta-key">Vai trò tích cực</div>
         </div>
-        <div class="role-icon">⚙</div>
-      </div>
-
-      <div class="role rv d2">
-        <div class="role-n">02</div>
-        <div class="role-info">
-          <h3 class="role-title">Chuyển nền sản xuất nhỏ sang sản xuất lớn hiện đại</h3>
-          <p class="role-text">Từ những xưởng thủ công phân tán mang tính gia đình, tích tụ và tập trung tư bản tạo ra nền đại công nghiệp quy mô lớn, chuyên môn hóa cao — tạo ra khối lượng hàng hóa khổng lồ, nền tảng cho thế giới công nghiệp hiện đại.</p>
-          <div class="role-tags">
-            <span class="tag">Tập trung tư bản</span>
-            <span class="tag">Chuyên môn hóa</span>
-            <span class="tag">Đại công nghiệp</span>
-          </div>
-        </div>
-        <div class="role-icon">🏭</div>
-      </div>
-
-      <div class="role rv d3">
-        <div class="role-n">03</div>
-        <div class="role-info">
-          <h3 class="role-title">Thúc đẩy quá trình xã hội hóa sản xuất toàn cầu</h3>
-          <p class="role-text">Thị trường mở rộng từ địa phương ra toàn cầu. Sản xuất trở thành hoạt động liên kết của hàng triệu người — từ chuỗi cung ứng xuyên quốc gia đến kinh tế số và kinh tế tri thức ngày nay, biểu hiện cao nhất của xã hội hóa sản xuất.</p>
-          <div class="role-tags">
-            <span class="tag">Toàn cầu hóa</span>
-            <span class="tag">Chuỗi cung ứng</span>
-            <span class="tag">Kinh tế tri thức</span>
-          </div>
-        </div>
-        <div class="role-icon">🌐</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<div class="quote-belt">
-  <div class="wrap">
-    <div class="rv">
-      <blockquote>
-        Giai cấp tư sản, trong thời gian chưa đầy một thế kỷ thống trị giai cấp, đã tạo ra những lực lượng sản xuất <strong>nhiều hơn và đồ sộ hơn</strong> toàn bộ các thế hệ trước cộng lại.
-      </blockquote>
-      <div class="quote-cite">
-        <span>Karl Marx &amp; Friedrich Engels · Tuyên ngôn của Đảng Cộng sản · 1848</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PART II -->
-<section class="part2" id="part2">
-  <div class="wrap">
-    <div class="part2-head rv">
-      <div class="sec-label" style="color:var(--coral2)"><span style="background:var(--coral2)" class="sl-line"></span>Phần II</div>
-      <h2 class="sec-h2">Những mâu thuẫn <span class="cc">nội tại</span><br>không thể hòa giải</h2>
-    <span class="line-draw rv"></span>
-    </div>
-
-    <div class="contra-grid">
-      <div class="contra rv d1">
-        <div class="contra-glyph">⊗</div>
-        <h3 class="contra-title">Xã hội hóa sản xuất vs. chiếm hữu tư nhân</h3>
-        <p class="contra-body">Sản xuất ngày càng mang tính xã hội cao — hàng triệu người tham gia — nhưng tư liệu và kết quả lại thuộc sở hữu thiểu số nhà tư bản. C. Mác xem đây là mâu thuẫn căn bản không thể giải quyết trong khuôn khổ phương thức sản xuất tư bản chủ nghĩa.</p>
-        <div class="contra-bar"></div>
-      </div>
-      <div class="contra rv d2">
-        <div class="contra-glyph">≠</div>
-        <h3 class="contra-title">Phân hóa giàu nghèo ngày càng sâu sắc</h3>
-        <p class="contra-body">Tích lũy tư bản làm của cải tập trung vào tay ít người, tạo ra khoảng cách thu nhập ngày càng mở rộng. Thiểu số nắm giữ phần lớn tài sản xã hội trong khi người lao động đối mặt với thu nhập thấp, việc làm bấp bênh.</p>
-        <div class="contra-bar"></div>
-      </div>
-      <div class="contra rv d3">
-        <div class="contra-glyph">∿</div>
-        <h3 class="contra-title">Khủng hoảng kinh tế mang tính chu kỳ</h3>
-        <p class="contra-body">Sản xuất vì lợi nhuận, không gắn với nhu cầu thực tế thị trường, dẫn đến dư thừa hàng hóa, phá sản doanh nghiệp và thất nghiệp hàng loạt theo chu kỳ. Đây là biểu hiện của bất ổn cơ cấu không thể tránh khỏi.</p>
-        <div class="contra-bar"></div>
-      </div>
-      <div class="contra rv d4">
-        <div class="contra-glyph">⚠</div>
-        <h3 class="contra-title">Khủng hoảng xã hội &amp; môi trường</h3>
-        <p class="contra-body">Khai thác tài nguyên vô độ, ô nhiễm môi trường, cạnh tranh không lành mạnh — sự phát triển của chủ nghĩa tư bản thường xung đột trực tiếp với phát triển bền vững và phúc lợi lâu dài của xã hội.</p>
-        <div class="contra-bar"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONCLUSION -->
-<section class="conclusion">
-  <div class="wrap">
-    <div class="concl-inner">
-      <span class="concl-ornament rv">· · ·</span>
-      <h2 class="concl-h2 rv">Vai trò lịch sử vĩ đại<br>và những giới hạn <i>tất yếu</i></h2>
-      <p class="concl-p rv d1">Từ góc nhìn kinh tế chính trị Mác–Lênin, chủ nghĩa tư bản là phương thức sản xuất có vai trò lịch sử không thể phủ nhận. Nó đã thúc đẩy lực lượng sản xuất phát triển vượt bậc, tạo ra nền đại công nghiệp và mở rộng xã hội hóa sản xuất đến quy mô toàn cầu — những thành tựu mà bản thân Mác và Ăngghen đã thừa nhận thẳng thắn.</p>
-      <p class="concl-p rv d2">Tuy nhiên, những mâu thuẫn nội tại không thể hòa giải — giữa tính xã hội của sản xuất và chế độ tư hữu, giữa tăng trưởng và công bằng — chính là động lực lịch sử đặt ra yêu cầu tìm kiếm những mô hình phát triển xã hội tiến bộ và công bằng hơn.</p>
-      <div class="concl-rule rv"></div>
-      <p class="concl-final rv">"Lịch sử là thẩm phán, giai cấp vô sản là người thi hành án."</p>
-    </div>
-  </div>
-</section>
-
-<!-- QUIZ -->
-<section class="quiz-sec" id="quiz">
-  <div class="wrap">
-    <div class="quiz-head rv">
-      <div class="sec-label" style="color:var(--teal2)">Quiz kiến thức</div>
-      <h2 class="sec-h2">Thử thách <span class="tc">bản thân</span><br>— Bạn hiểu bao nhiêu?</h2>
-    </div>
-
-    <!-- START -->
-    <div class="q-start rv d1" id="q-start">
-      <div class="q-start-icon">⚡</div>
-      <p class="q-start-desc">8 câu hỏi · Đếm ngược 15 giây · Điểm theo tốc độ trả lời</p>
-      <button class="q-btn" onclick="startQuiz()">Bắt đầu Quiz</button>
-    </div>
-
-    <!-- GAME -->
-    <div id="q-game" style="display:none">
-      <div class="q-metabar">
-        <div class="qm-item"><span class="qm-lbl">Câu</span><span class="qm-val" id="qm-num">1/8</span></div>
-        <div class="qm-item"><span class="qm-lbl">Điểm</span><span class="qm-val" id="qm-score">0</span></div>
-        <div class="qm-item">
-          <div class="t-ring" id="t-ring">
-            <svg viewBox="0 0 44 44">
-              <circle cx="22" cy="22" r="19" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="3"/>
-              <circle cx="22" cy="22" r="19" fill="none" stroke="var(--amber)" stroke-width="3"
-                stroke-dasharray="119.4" stroke-dashoffset="0" id="t-circle"
-                stroke-linecap="round" transform="rotate(-90 22 22)"/>
-            </svg>
-            <span id="t-num">15</span>
-          </div>
+        <div class="hmeta">
+          <div class="hmeta-val"><span class="count-anim" data-target="3">0</span></div>
+          <div class="hmeta-key">Giới hạn nội tại</div>
         </div>
       </div>
+    </div>
 
-      <div class="q-prog-bar"><div id="q-prog" style="width:0%"></div></div>
-
-      <div class="q-qbox"><p class="q-text" id="q-text">Câu hỏi</p></div>
-
-      <div class="q-grid" id="q-grid"></div>
-
-      <div id="q-fb" style="display:none" class="q-fb">
-        <span id="fb-msg"></span>
-        <span class="fb-pts" id="fb-pts"></span>
+    <div class="hero-footer">
+      <div class="hero-footer-l">Kinh tế chính trị Mác–Lênin</div>
+      <div class="scroll-cue"><span>Khám phá</span>
+        <div class="scroll-cue-line"></div>
       </div>
     </div>
+  </header>
 
-    <!-- RESULT -->
-    <div id="q-result" style="display:none" class="q-result">
-      <div class="res-icon" id="res-icon">🏆</div>
-      <h3 class="res-title" id="res-title">Xuất sắc!</h3>
-      <div class="res-big" id="res-big">0</div>
-      <div class="res-lbl">điểm</div>
-      <div class="res-stats" id="res-stats"></div>
-      <button class="q-btn" onclick="restartQuiz()" style="margin-top:1.5rem">Chơi lại</button>
+  <!-- INTRO -->
+  <section class="intro-strip">
+    <div class="wrap">
+      <div class="intro-grid rv">
+        <div class="intro-aside">
+          <span class="intro-aside-label">Ý trung tâm</span>
+          <p>Chủ nghĩa tư bản vừa tạo ra <strong style="color:var(--amber)">động lực phát triển mạnh mẽ</strong>, vừa
+            tạo ra những mâu thuẫn và giới hạn của chính nó — cần nhìn nhận trên <strong style="color:var(--amber)">cả
+              hai mặt</strong>.</p>
+        </div>
+        <div class="intro-body">
+          <p>Vai trò lịch sử của chủ nghĩa tư bản cần được nhìn nhận trên hai mặt: <strong
+              style="color:var(--bright)">một mặt</strong>, nó là một bước phát triển lớn của lịch sử nhân loại vì đã
+            thúc đẩy sản xuất và hiện đại hóa nền kinh tế; <strong style="color:var(--bright)">mặt khác</strong>, nó có
+            những giới hạn nội tại khiến nó không thể trở thành mô hình phát triển cuối cùng và vĩnh viễn của xã hội
+            loài người.</p>
+          <p>Xét trong lịch sử, chủ nghĩa tư bản từng là một giai đoạn phát triển tiến bộ hơn so với các hình thức sản
+            xuất nhỏ và lạc hậu trước đó. Song những giới hạn của nó — phục vụ lợi ích thiểu số tư sản, gắn với chiến
+            tranh và xung đột, làm sâu sắc thêm phân hóa giàu nghèo — là những mâu thuẫn không thể tự khắc phục triệt
+            để.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART I -->
+  <section class="part1" id="part1">
+    <div class="wrap">
+      <div class="part1-head rv">
+        <div class="sec-label">Phần I</div>
+        <h2 class="sec-h2">Những đóng góp <i>lịch sử</i><br>không thể phủ nhận</h2>
+        <span class="line-draw rv"></span>
+      </div>
+
+      <div class="roles">
+        <div class="role rv d1">
+          <div class="role-n">01</div>
+          <div class="role-info">
+            <h3 class="role-title">Thúc đẩy lực lượng sản xuất phát triển vượt bậc</h3>
+            <p class="role-text">Kỹ thuật đi từ <em>thủ công</em> → <em>cơ khí</em> → <em>tự động hóa</em> → <em>tin học
+                hóa</em>. Động lực lợi nhuận và cạnh tranh buộc các nhà tư bản liên tục đổi mới — gắn liền với cả 4 cuộc
+              cách mạng công nghiệp. Nhờ đó, năng suất lao động tăng mạnh, con người tạo ra nhiều của cải hơn và khả
+              năng chinh phục tự nhiên cũng cao hơn.</p>
+            <div class="role-tags">
+              <span class="tag">Cách mạng công nghiệp</span>
+              <span class="tag">Đổi mới kỹ thuật</span>
+              <span class="tag">Năng suất lao động</span>
+              <span class="tag">Tự động hóa</span>
+              <span class="tag">Tin học hóa</span>
+            </div>
+            <div class="tech-chain rv d2">
+              <span class="tc-step">Thủ công</span>
+              <span class="tc-arr">→</span>
+              <span class="tc-step">Cơ khí</span>
+              <span class="tc-arr">→</span>
+              <span class="tc-step">Tự động</span>
+              <span class="tc-arr">→</span>
+              <span class="tc-step active">Số hóa</span>
+            </div>
+          </div>
+          <div class="role-icon">⚙</div>
+        </div>
+
+        <div class="role rv d2">
+          <div class="role-n">02</div>
+          <div class="role-info">
+            <h3 class="role-title">Chuyển nền sản xuất nhỏ sang sản xuất lớn hiện đại</h3>
+            <p class="role-text">Chủ nghĩa tư bản làm cho sản xuất không còn nhỏ lẻ, phân tán như trước mà chuyển sang
+              <em>sản xuất tập trung, quy mô lớn, hiện đại và năng suất cao</em>. Dưới tác động của kinh tế thị trường,
+              kỹ thuật được cải tiến liên tục, khối lượng hàng hóa ngày càng lớn và phong phú — một bước chuyển rất quan
+              trọng trong lịch sử phát triển kinh tế.
+            </p>
+            <div class="role-tags">
+              <span class="tag">Tập trung tư bản</span>
+              <span class="tag">Chuyên môn hóa</span>
+              <span class="tag">Đại công nghiệp</span>
+            </div>
+          </div>
+          <div class="role-icon">🏭</div>
+        </div>
+
+        <div class="role rv d3">
+          <div class="role-n">03</div>
+          <div class="role-info">
+            <h3 class="role-title">Thực hiện xã hội hóa sản xuất</h3>
+            <p class="role-text">Chủ nghĩa tư bản làm cho sản xuất không còn là hoạt động riêng lẻ, mà có sự <em>liên
+                kết ngày càng chặt chẽ</em> giữa nhiều người, nhiều ngành, nhiều lĩnh vực và nhiều quốc gia. Phân công
+              lao động sâu hơn, chuyên môn hóa cao hơn, hợp tác sản xuất rộng hơn — hình thành một hệ thống sản xuất xã
+              hội thống nhất trên phạm vi toàn cầu.</p>
+            <div class="role-tags">
+              <span class="tag">Toàn cầu hóa</span>
+              <span class="tag">Chuỗi cung ứng</span>
+              <span class="tag">Kinh tế tri thức</span>
+            </div>
+          </div>
+          <div class="role-icon">🌐</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <div class="quote-belt">
+    <div class="wrap">
+      <div class="rv">
+        <blockquote>
+          Giai cấp tư sản, trong thời gian chưa đầy một thế kỷ thống trị giai cấp, đã tạo ra những lực lượng sản xuất
+          <strong>nhiều hơn và đồ sộ hơn</strong> toàn bộ các thế hệ trước cộng lại.
+        </blockquote>
+        <div class="quote-cite">
+          <span>Karl Marx &amp; Friedrich Engels · Tuyên ngôn của Đảng Cộng sản · 1848</span>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="ft-l">Kinh tế chính trị Mác–Lênin · Chương 4 · Mục 4.3.3</div>
-  <div class="ft-r">Vai trò lịch sử của CNTB</div>
-</footer>
+  <!-- PART II -->
+  <section class="part2" id="part2">
+    <div class="wrap">
+      <div class="part2-head rv">
+        <div class="sec-label" style="color:var(--coral2)"><span style="background:var(--coral2)"
+            class="sl-line"></span>Phần II</div>
+        <h2 class="sec-h2">Những mâu thuẫn <span class="cc">nội tại</span><br>không thể hòa giải</h2>
+        <span class="line-draw rv"></span>
+      </div>
 
-<script>
-/* ── CURSOR ── */
-const cur=document.getElementById('cur'),curO=document.getElementById('curO');
-let mx=0,my=0,ox=0,oy=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
-(function loop(){ox+=(mx-ox)*.13;oy+=(my-oy)*.13;curO.style.left=ox+'px';curO.style.top=oy+'px';requestAnimationFrame(loop)})();
-document.querySelectorAll('.role,.contra,.a-btn,.q-btn,.tag').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.width='12px';cur.style.height='12px';curO.style.width='48px';curO.style.height='48px'});
-  el.addEventListener('mouseleave',()=>{cur.style.width='6px';cur.style.height='6px';curO.style.width='28px';curO.style.height='28px'});
-});
+      <div class="contra-grid">
+        <div class="contra rv d1">
+          <div class="contra-glyph">⊗</div>
+          <h3 class="contra-title">Nền sản xuất phục vụ lợi ích thiểu số tư sản</h3>
+          <p class="contra-body">Dù tạo ra khối lượng của cải khổng lồ, nền sản xuất tư bản về bản chất vẫn phục vụ lợi
+            ích của thiểu số giai cấp tư sản — nhất là các tập đoàn độc quyền. Chúng có thể áp đặt giá, hạn chế sản
+            lượng, thậm chí <em>kìm hãm tiến bộ kỹ thuật</em> nếu điều đó đe dọa vị thế độc quyền.</p>
+          <div class="contra-bar"></div>
+        </div>
+        <div class="contra rv d2">
+          <div class="contra-glyph">⚔</div>
+          <h3 class="contra-title">Gắn với chiến tranh &amp; xung đột quốc tế</h3>
+          <p class="contra-body">Tranh giành thị trường, thuộc địa và phân chia lại thế giới giữa các cường quốc tư bản
+            góp phần gây ra nhiều cuộc chiến tranh lớn. Ngay cả trong thời hiện đại, chiến tranh cục bộ, xung đột sắc
+            tộc và chiến tranh thương mại vẫn tiếp diễn.</p>
+          <div class="contra-bar"></div>
+        </div>
+        <div class="contra rv d3">
+          <div class="contra-glyph">≠</div>
+          <h3 class="contra-title">Phân hóa giàu nghèo ngày càng sâu sắc</h3>
+          <p class="contra-body">Sự chênh lệch giàu–nghèo xuất hiện ngay từ khi chủ nghĩa tư bản ra đời và tiếp tục nới
+            rộng khi quá trình tích lũy, tích tụ tư bản ngày càng cao. Xã hội giàu lên về tổng thể nhưng <em>không đồng
+              nghĩa mọi tầng lớp đều được hưởng lợi như nhau</em>.</p>
+          <div class="contra-bar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* ── REVEAL ── */
-const rv=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');rv.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
-document.querySelectorAll('.rv').forEach(el=>rv.observe(el));
+  <!-- CONCLUSION -->
+  <section class="conclusion">
+    <div class="wrap">
+      <div class="concl-inner">
+        <span class="concl-ornament rv">· · ·</span>
+        <h2 class="concl-h2 rv">Vai trò lịch sử vĩ đại<br>và những giới hạn <i>tất yếu</i></h2>
+        <p class="concl-p rv d1"><strong style="color:var(--bright)">Mặt tích cực:</strong> Chủ nghĩa tư bản đã phát
+          triển lực lượng sản xuất, hiện đại hóa nền sản xuất và thúc đẩy xã hội hóa sản xuất. Đây là những đóng góp
+          lịch sử to lớn, khiến nó từng là giai đoạn phát triển tiến bộ hơn so với các hình thức sản xuất nhỏ và lạc hậu
+          trước đó.</p>
+        <p class="concl-p rv d2"><strong style="color:var(--coral2)">Mặt giới hạn:</strong> Chủ nghĩa tư bản vẫn phục vụ
+          lợi ích của thiểu số tư sản, gắn với chiến tranh–xung đột và làm gia tăng phân hóa giàu nghèo. Đây là những
+          giới hạn nội tại không thể tự khắc phục triệt để — lý do khiến nó không thể là mô hình cuối cùng của sự phát
+          triển xã hội loài người.</p>
+        <div class="verdict-box rv d3">
+          <div class="vb-row">
+            <div class="vb-half positive">
+              <div class="vb-label">✦ Mặt tích cực</div>
+              <p>Phát triển lực lượng sản xuất · Hiện đại hóa nền sản xuất · Thực hiện xã hội hóa sản xuất</p>
+            </div>
+            <div class="vb-half negative">
+              <div class="vb-label">✦ Mặt giới hạn</div>
+              <p>Phục vụ lợi ích thiểu số tư sản · Gắn với chiến tranh–xung đột · Làm sâu sắc phân hóa giàu nghèo</p>
+            </div>
+          </div>
+          <div class="vb-core">Ý cốt lõi: Chủ nghĩa tư bản <em>vừa tạo ra động lực phát triển mạnh mẽ</em>, vừa tạo ra
+            những mâu thuẫn và giới hạn của chính nó — là <em>một bước phát triển lớn trong lịch sử</em>, nhưng
+            <em>không phải mô hình cuối cùng</em> của xã hội loài người.
+          </div>
+        </div>
+        <div class="concl-rule rv"></div>
+        <p class="concl-final rv">"Lịch sử là thẩm phán, giai cấp vô sản là người thi hành án."</p>
+      </div>
+    </div>
+  </section>
 
-/* ── QUIZ ── */
-const QS=[
-  {q:"Theo Mác–Lênin, vai trò lịch sử quan trọng nhất của chủ nghĩa tư bản là gì?",o:["Thúc đẩy lực lượng sản xuất phát triển vượt bậc","Xóa bỏ hoàn toàn bất bình đẳng xã hội","Thiết lập nền kinh tế tự cung tự cấp","Ngăn chặn quá trình toàn cầu hóa"],a:0,n:"Chủ nghĩa tư bản tạo ra bước nhảy vọt của lực lượng sản xuất so với mọi phương thức sản xuất trước đó."},
-  {q:"Điều gì thúc đẩy các nhà tư bản liên tục cải tiến kỹ thuật và tổ chức sản xuất?",o:["Tinh thần từ thiện và nhân đạo","Động lực lợi nhuận và cạnh tranh","Mệnh lệnh từ nhà nước phong kiến","Nhu cầu phúc lợi của công nhân"],a:1,n:"Cạnh tranh và lợi nhuận là động cơ nội tại thúc đẩy đổi mới không ngừng trong nền kinh tế tư bản."},
-  {q:"Mâu thuẫn cơ bản của phương thức sản xuất tư bản chủ nghĩa theo C. Mác là gì?",o:["Giữa nông nghiệp và công nghiệp","Giữa tính xã hội hóa sản xuất và chế độ chiếm hữu tư nhân","Giữa nhà nước và thị trường","Giữa khoa học và tôn giáo"],a:1,n:"Sản xuất mang tính xã hội (hàng triệu người tham gia) nhưng kết quả thuộc sở hữu thiểu số — đây là mâu thuẫn căn bản."},
-  {q:"Chủ nghĩa tư bản đã chuyển nền sản xuất từ dạng nào sang dạng nào?",o:["Từ sản xuất nông nghiệp sang dịch vụ","Từ sản xuất nhỏ phân tán sang sản xuất lớn hiện đại","Từ sản xuất tập thể sang cá nhân","Từ sản xuất nhà nước sang tư nhân"],a:1,n:"Tích tụ và tập trung tư bản tạo ra nền đại công nghiệp — bước chuyển lịch sử từ thủ công sang công nghiệp hóa."},
-  {q:"Nguyên nhân chính gây ra khủng hoảng kinh tế trong chủ nghĩa tư bản là gì?",o:["Thiếu lao động trong xã hội","Sản xuất vượt quá nhu cầu thực tế của thị trường","Quá nhiều sự can thiệp của nhà nước","Thiếu tài nguyên thiên nhiên"],a:1,n:"Sản xuất vì lợi nhuận chứ không vì nhu cầu dẫn đến dư thừa — nguyên nhân của các cuộc khủng hoảng chu kỳ."},
-  {q:"Marx & Engels đã viết Tuyên ngôn của Đảng Cộng sản vào năm nào?",o:["1776","1830","1848","1917"],a:2,n:"Tuyên ngôn của Đảng Cộng sản công bố năm 1848, thừa nhận vai trò lịch sử của giai cấp tư sản."},
-  {q:"'Xã hội hóa sản xuất' trong chủ nghĩa tư bản thể hiện ở điều gì?",o:["Nhà nước sở hữu toàn bộ tư liệu sản xuất","Nhiều người cùng tham gia và các ngành liên kết chặt chẽ","Mỗi người tự sản xuất cho bản thân","Sản xuất chỉ trong phạm vi một quốc gia"],a:1,n:"Xã hội hóa nghĩa là sản xuất gắn kết hàng triệu người, nhiều ngành, mở rộng ra toàn cầu."},
-  {q:"Hạn chế nào của chủ nghĩa tư bản liên quan đến môi trường?",o:["Đầu tư quá nhiều vào năng lượng tái tạo","Khai thác tài nguyên vô độ và ô nhiễm môi trường","Hạn chế sản xuất để bảo vệ thiên nhiên","Không phát triển công nghiệp nặng"],a:1,n:"Chạy theo lợi nhuận ngắn hạn khiến chủ nghĩa tư bản khai thác tài nguyên quá mức và gây ô nhiễm nghiêm trọng."}
-];
-const LT=['A','B','C','D'],TL=15,MAX=1000;
-let qi=0,sc=0,cr=0,ti=null,tl=0,done=false;
+  <!-- QUIZ -->
+  <section class="quiz-sec" id="quiz">
+    <div class="wrap">
+      <div class="quiz-head rv">
+        <div class="sec-label" style="color:var(--teal2)">Quiz kiến thức</div>
+        <h2 class="sec-h2">Thử thách <span class="tc">bản thân</span><br>— Bạn hiểu bao nhiêu?</h2>
+      </div>
 
-function startQuiz(){
-  qi=0;sc=0;cr=0;done=false;
-  document.getElementById('q-start').style.display='none';
-  document.getElementById('q-result').style.display='none';
-  document.getElementById('q-game').style.display='block';
-  loadQ();
-}
-function loadQ(){
-  done=false;
-  const q=QS[qi];
-  document.getElementById('qm-num').textContent=(qi+1)+'/'+QS.length;
-  document.getElementById('qm-score').textContent=sc;
-  document.getElementById('q-text').textContent=q.q;
-  document.getElementById('q-prog').style.width=((qi/QS.length)*100)+'%';
-  document.getElementById('q-fb').style.display='none';
-  const sh=[0,1,2,3].map((v,i)=>({v,i})).sort(()=>Math.random()-.5);
-  const ci=sh.findIndex(x=>x.i===q.a);
-  document.getElementById('q-grid').innerHTML=sh.map((it,si)=>
-    `<button class="a-btn" onclick="pick(${si},${ci})"><span class="a-ltr">${LT[si]}</span><span>${q.o[it.i]}</span></button>`
-  ).join('');
-  startTimer();
-}
-function startTimer(){
-  clearInterval(ti);tl=TL;updTimer(tl);
-  document.getElementById('t-ring').classList.remove('red');
-  ti=setInterval(()=>{
-    tl--;updTimer(tl);
-    if(tl<=5) document.getElementById('t-ring').classList.add('red');
-    if(tl<=0){clearInterval(ti);if(!done)timeUp();}
-  },1000);
-}
-function updTimer(t){
-  document.getElementById('t-num').textContent=t;
-  document.getElementById('t-circle').style.strokeDashoffset=119.4*(1-t/TL);
-}
-function timeUp(){
-  done=true;
-  document.querySelectorAll('.a-btn').forEach(b=>{b.disabled=true;b.classList.add('dm')});
-  showFb(false,0,'⏰ Hết giờ! — '+QS[qi].n);
-  setTimeout(nextQ,2200);
-}
-function pick(chosen,ci){
-  if(done) return;done=true;clearInterval(ti);
-  const ok=chosen===ci;
-  const pts=ok?Math.round(MAX*(tl/TL)*.8+200):0;
-  if(ok){sc+=pts;cr++;}
-  document.querySelectorAll('.a-btn').forEach((b,i)=>{
-    b.disabled=true;
-    if(i===ci) b.classList.add('ok');
-    else if(i===chosen&&!ok) b.classList.add('no');
-    else b.classList.add('dm');
-  });
-  showFb(ok,pts,(ok?'✓ Chính xác! — ':'✗ Sai — ')+QS[qi].n);
-  setTimeout(nextQ,2600);
-}
-function showFb(ok,pts,msg){
-  const fb=document.getElementById('q-fb');
-  fb.style.display='flex';
-  fb.className='q-fb '+(ok?'ok-fb':'no-fb');
-  document.getElementById('fb-msg').textContent=msg;
-  document.getElementById('fb-pts').textContent=ok?'+'+pts+' pts':'';
-}
-function nextQ(){qi++;qi<QS.length?loadQ():showResult();}
-function showResult(){
-  document.getElementById('q-game').style.display='none';
-  document.getElementById('q-result').style.display='block';
-  const pct=cr/QS.length;
-  let ic='🏆',tt='Xuất sắc!';
-  if(pct<.4){ic='📚';tt='Cần ôn tập thêm!'}
-  else if(pct<.7){ic='👍';tt='Khá tốt!'}
-  else if(pct<1){ic='🌟';tt='Rất giỏi!'}
-  document.getElementById('res-icon').textContent=ic;
-  document.getElementById('res-title').textContent=tt;
-  let n=0;const el=document.getElementById('res-big');
-  const step=Math.ceil(sc/60);
-  const anim=setInterval(()=>{n=Math.min(n+step,sc);el.textContent=n;if(n>=sc)clearInterval(anim)},16);
-  document.getElementById('res-stats').innerHTML=
-    `<div class="rs"><div class="rs-n" style="color:var(--teal2)">${cr}</div><div class="rs-k">Câu đúng</div></div>
-     <div class="rs"><div class="rs-n" style="color:var(--coral2)">${QS.length-cr}</div><div class="rs-k">Câu sai</div></div>
-     <div class="rs"><div class="rs-n" style="color:var(--amber)">${Math.round(pct*100)}%</div><div class="rs-k">Tỉ lệ đúng</div></div>`;
-  document.getElementById('q-prog').style.width='100%';
-}
-function restartQuiz(){
-  document.getElementById('q-result').style.display='none';
-  document.getElementById('q-start').style.display='block';
-}
+      <!-- START -->
+      <div class="q-start rv d1" id="q-start">
+        <div class="q-start-icon">⚡</div>
+        <p class="q-start-desc">8 câu hỏi · Đếm ngược 15 giây · Điểm theo tốc độ trả lời</p>
+        <button class="q-btn" onclick="startQuiz()">Bắt đầu Quiz</button>
+      </div>
 
-/* ═══ MOTION EFFECTS ═══ */
+      <!-- GAME -->
+      <div id="q-game" style="display:none">
+        <div class="q-metabar">
+          <div class="qm-item"><span class="qm-lbl">Câu</span><span class="qm-val" id="qm-num">1/8</span></div>
+          <div class="qm-item"><span class="qm-lbl">Điểm</span><span class="qm-val" id="qm-score">0</span></div>
+          <div class="qm-item">
+            <div class="t-ring" id="t-ring">
+              <svg viewBox="0 0 44 44">
+                <circle cx="22" cy="22" r="19" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="3" />
+                <circle cx="22" cy="22" r="19" fill="none" stroke="var(--amber)" stroke-width="3"
+                  stroke-dasharray="119.4" stroke-dashoffset="0" id="t-circle" stroke-linecap="round"
+                  transform="rotate(-90 22 22)" />
+              </svg>
+              <span id="t-num">15</span>
+            </div>
+          </div>
+        </div>
 
-// ── SCROLL PROGRESS BAR ──
-const spBar = document.getElementById('scroll-progress');
-window.addEventListener('scroll', () => {
-  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-  spBar.style.width = (pct * 100) + '%';
-}, { passive: true });
+        <div class="q-prog-bar">
+          <div id="q-prog" style="width:0%"></div>
+        </div>
 
-// ── PARTICLE CANVAS (hero) ──
-(function() {
-  const cv = document.getElementById('particle-canvas');
-  if (!cv) return;
-  const ctx = cv.getContext('2d');
-  let W, H, pts = [];
+        <div class="q-qbox">
+          <p class="q-text" id="q-text">Câu hỏi</p>
+        </div>
 
-  function resize() {
-    W = cv.width  = cv.offsetWidth;
-    H = cv.height = cv.offsetHeight;
-  }
-  resize();
-  new ResizeObserver(resize).observe(cv.parentElement);
+        <div class="q-grid" id="q-grid"></div>
 
-  const N = 55;
-  for (let i = 0; i < N; i++) pts.push({
-    x: Math.random() * 1200, y: Math.random() * 800,
-    vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
-    r: Math.random() * 1.4 + .4,
-    a: Math.random() * .35 + .05
-  });
+        <div id="q-fb" style="display:none" class="q-fb">
+          <span id="fb-msg"></span>
+          <span class="fb-pts" id="fb-pts"></span>
+        </div>
+      </div>
 
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    pts.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(212,168,67,${p.a})`;
-      ctx.fill();
+      <!-- RESULT -->
+      <div id="q-result" style="display:none" class="q-result">
+        <div class="res-icon" id="res-icon">🏆</div>
+        <h3 class="res-title" id="res-title">Xuất sắc!</h3>
+        <div class="res-big" id="res-big">0</div>
+        <div class="res-lbl">điểm</div>
+        <div class="res-stats" id="res-stats"></div>
+        <button class="q-btn" onclick="restartQuiz()" style="margin-top:1.5rem">Chơi lại</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-l">Kinh tế chính trị Mác–Lênin · Chương 4 · Mục 4.3.3</div>
+    <div class="ft-r">Vai trò lịch sử của CNTB</div>
+  </footer>
+
+  <script>
+    /* ── CURSOR ── */
+    const cur = document.getElementById('cur'), curO = document.getElementById('curO');
+    let mx = 0, my = 0, ox = 0, oy = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px' });
+    (function loop() { ox += (mx - ox) * .13; oy += (my - oy) * .13; curO.style.left = ox + 'px'; curO.style.top = oy + 'px'; requestAnimationFrame(loop) })();
+    document.querySelectorAll('.role,.contra,.a-btn,.q-btn,.tag').forEach(el => {
+      el.addEventListener('mouseenter', () => { cur.style.width = '12px'; cur.style.height = '12px'; curO.style.width = '48px'; curO.style.height = '48px' });
+      el.addEventListener('mouseleave', () => { cur.style.width = '6px'; cur.style.height = '6px'; curO.style.width = '28px'; curO.style.height = '28px' });
     });
-    // draw faint connecting lines between nearby particles
-    for (let i = 0; i < pts.length; i++) {
-      for (let j = i + 1; j < pts.length; j++) {
-        const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 120) {
+
+    /* ── REVEAL ── */
+    const rv = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); rv.unobserve(e.target) } }) }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.rv').forEach(el => rv.observe(el));
+
+    /* ── QUIZ ── */
+    const QS = [
+      { q: "Theo Mác–Lênin, vai trò lịch sử quan trọng nhất của chủ nghĩa tư bản là gì?", o: ["Thúc đẩy lực lượng sản xuất phát triển vượt bậc", "Xóa bỏ hoàn toàn bất bình đẳng xã hội", "Thiết lập nền kinh tế tự cung tự cấp", "Ngăn chặn quá trình toàn cầu hóa"], a: 0, n: "Chủ nghĩa tư bản tạo ra bước nhảy vọt của lực lượng sản xuất so với mọi phương thức sản xuất trước đó." },
+      { q: "Điều gì thúc đẩy các nhà tư bản liên tục cải tiến kỹ thuật và tổ chức sản xuất?", o: ["Tinh thần từ thiện và nhân đạo", "Động lực lợi nhuận và cạnh tranh", "Mệnh lệnh từ nhà nước phong kiến", "Nhu cầu phúc lợi của công nhân"], a: 1, n: "Cạnh tranh và lợi nhuận là động cơ nội tại thúc đẩy đổi mới không ngừng trong nền kinh tế tư bản." },
+      { q: "Mâu thuẫn cơ bản của phương thức sản xuất tư bản chủ nghĩa theo C. Mác là gì?", o: ["Giữa nông nghiệp và công nghiệp", "Giữa tính xã hội hóa sản xuất và chế độ chiếm hữu tư nhân", "Giữa nhà nước và thị trường", "Giữa khoa học và tôn giáo"], a: 1, n: "Sản xuất mang tính xã hội (hàng triệu người tham gia) nhưng kết quả thuộc sở hữu thiểu số — đây là mâu thuẫn căn bản." },
+      { q: "Chủ nghĩa tư bản đã chuyển nền sản xuất từ dạng nào sang dạng nào?", o: ["Từ sản xuất nông nghiệp sang dịch vụ", "Từ sản xuất nhỏ phân tán sang sản xuất lớn hiện đại", "Từ sản xuất tập thể sang cá nhân", "Từ sản xuất nhà nước sang tư nhân"], a: 1, n: "Tích tụ và tập trung tư bản tạo ra nền đại công nghiệp — bước chuyển lịch sử từ thủ công sang công nghiệp hóa." },
+      { q: "Nguyên nhân chính gây ra khủng hoảng kinh tế trong chủ nghĩa tư bản là gì?", o: ["Thiếu lao động trong xã hội", "Sản xuất vượt quá nhu cầu thực tế của thị trường", "Quá nhiều sự can thiệp của nhà nước", "Thiếu tài nguyên thiên nhiên"], a: 1, n: "Sản xuất vì lợi nhuận chứ không vì nhu cầu dẫn đến dư thừa — nguyên nhân của các cuộc khủng hoảng chu kỳ." },
+      { q: "Marx & Engels đã viết Tuyên ngôn của Đảng Cộng sản vào năm nào?", o: ["1776", "1830", "1848", "1917"], a: 2, n: "Tuyên ngôn của Đảng Cộng sản công bố năm 1848, thừa nhận vai trò lịch sử của giai cấp tư sản." },
+      { q: "'Xã hội hóa sản xuất' trong chủ nghĩa tư bản thể hiện ở điều gì?", o: ["Nhà nước sở hữu toàn bộ tư liệu sản xuất", "Nhiều người cùng tham gia và các ngành liên kết chặt chẽ", "Mỗi người tự sản xuất cho bản thân", "Sản xuất chỉ trong phạm vi một quốc gia"], a: 1, n: "Xã hội hóa nghĩa là sản xuất gắn kết hàng triệu người, nhiều ngành, mở rộng ra toàn cầu." },
+      { q: "Hạn chế nào của chủ nghĩa tư bản liên quan đến môi trường?", o: ["Đầu tư quá nhiều vào năng lượng tái tạo", "Khai thác tài nguyên vô độ và ô nhiễm môi trường", "Hạn chế sản xuất để bảo vệ thiên nhiên", "Không phát triển công nghiệp nặng"], a: 1, n: "Chạy theo lợi nhuận ngắn hạn khiến chủ nghĩa tư bản khai thác tài nguyên quá mức và gây ô nhiễm nghiêm trọng." }
+    ];
+    const LT = ['A', 'B', 'C', 'D'], TL = 15, MAX = 1000;
+    let qi = 0, sc = 0, cr = 0, ti = null, tl = 0, done = false;
+
+    function startQuiz() {
+      qi = 0; sc = 0; cr = 0; done = false;
+      document.getElementById('q-start').style.display = 'none';
+      document.getElementById('q-result').style.display = 'none';
+      document.getElementById('q-game').style.display = 'block';
+      loadQ();
+    }
+    function loadQ() {
+      done = false;
+      const q = QS[qi];
+      document.getElementById('qm-num').textContent = (qi + 1) + '/' + QS.length;
+      document.getElementById('qm-score').textContent = sc;
+      document.getElementById('q-text').textContent = q.q;
+      document.getElementById('q-prog').style.width = ((qi / QS.length) * 100) + '%';
+      document.getElementById('q-fb').style.display = 'none';
+      const sh = [0, 1, 2, 3].map((v, i) => ({ v, i })).sort(() => Math.random() - .5);
+      const ci = sh.findIndex(x => x.i === q.a);
+      document.getElementById('q-grid').innerHTML = sh.map((it, si) =>
+        `<button class="a-btn" onclick="pick(${si},${ci})"><span class="a-ltr">${LT[si]}</span><span>${q.o[it.i]}</span></button>`
+      ).join('');
+      startTimer();
+    }
+    function startTimer() {
+      clearInterval(ti); tl = TL; updTimer(tl);
+      document.getElementById('t-ring').classList.remove('red');
+      ti = setInterval(() => {
+        tl--; updTimer(tl);
+        if (tl <= 5) document.getElementById('t-ring').classList.add('red');
+        if (tl <= 0) { clearInterval(ti); if (!done) timeUp(); }
+      }, 1000);
+    }
+    function updTimer(t) {
+      document.getElementById('t-num').textContent = t;
+      document.getElementById('t-circle').style.strokeDashoffset = 119.4 * (1 - t / TL);
+    }
+    function timeUp() {
+      done = true;
+      document.querySelectorAll('.a-btn').forEach(b => { b.disabled = true; b.classList.add('dm') });
+      showFb(false, 0, '⏰ Hết giờ! — ' + QS[qi].n);
+      setTimeout(nextQ, 2200);
+    }
+    function pick(chosen, ci) {
+      if (done) return; done = true; clearInterval(ti);
+      const ok = chosen === ci;
+      const pts = ok ? Math.round(MAX * (tl / TL) * .8 + 200) : 0;
+      if (ok) { sc += pts; cr++; }
+      document.querySelectorAll('.a-btn').forEach((b, i) => {
+        b.disabled = true;
+        if (i === ci) b.classList.add('ok');
+        else if (i === chosen && !ok) b.classList.add('no');
+        else b.classList.add('dm');
+      });
+      showFb(ok, pts, (ok ? '✓ Chính xác! — ' : '✗ Sai — ') + QS[qi].n);
+      setTimeout(nextQ, 2600);
+    }
+    function showFb(ok, pts, msg) {
+      const fb = document.getElementById('q-fb');
+      fb.style.display = 'flex';
+      fb.className = 'q-fb ' + (ok ? 'ok-fb' : 'no-fb');
+      document.getElementById('fb-msg').textContent = msg;
+      document.getElementById('fb-pts').textContent = ok ? '+' + pts + ' pts' : '';
+    }
+    function nextQ() { qi++; qi < QS.length ? loadQ() : showResult(); }
+    function showResult() {
+      document.getElementById('q-game').style.display = 'none';
+      document.getElementById('q-result').style.display = 'block';
+      const pct = cr / QS.length;
+      let ic = '🏆', tt = 'Xuất sắc!';
+      if (pct < .4) { ic = '📚'; tt = 'Cần ôn tập thêm!' }
+      else if (pct < .7) { ic = '👍'; tt = 'Khá tốt!' }
+      else if (pct < 1) { ic = '🌟'; tt = 'Rất giỏi!' }
+      document.getElementById('res-icon').textContent = ic;
+      document.getElementById('res-title').textContent = tt;
+      let n = 0; const el = document.getElementById('res-big');
+      const step = Math.ceil(sc / 60);
+      const anim = setInterval(() => { n = Math.min(n + step, sc); el.textContent = n; if (n >= sc) clearInterval(anim) }, 16);
+      document.getElementById('res-stats').innerHTML =
+        `<div class="rs"><div class="rs-n" style="color:var(--teal2)">${cr}</div><div class="rs-k">Câu đúng</div></div>
+     <div class="rs"><div class="rs-n" style="color:var(--coral2)">${QS.length - cr}</div><div class="rs-k">Câu sai</div></div>
+     <div class="rs"><div class="rs-n" style="color:var(--amber)">${Math.round(pct * 100)}%</div><div class="rs-k">Tỉ lệ đúng</div></div>`;
+      document.getElementById('q-prog').style.width = '100%';
+    }
+    function restartQuiz() {
+      document.getElementById('q-result').style.display = 'none';
+      document.getElementById('q-start').style.display = 'block';
+    }
+
+    /* ═══ MOTION EFFECTS ═══ */
+
+    // ── SCROLL PROGRESS BAR ──
+    const spBar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      spBar.style.width = (pct * 100) + '%';
+    }, { passive: true });
+
+    // ── PARTICLE CANVAS (hero) ──
+    (function () {
+      const cv = document.getElementById('particle-canvas');
+      if (!cv) return;
+      const ctx = cv.getContext('2d');
+      let W, H, pts = [];
+
+      function resize() {
+        W = cv.width = cv.offsetWidth;
+        H = cv.height = cv.offsetHeight;
+      }
+      resize();
+      new ResizeObserver(resize).observe(cv.parentElement);
+
+      const N = 55;
+      for (let i = 0; i < N; i++) pts.push({
+        x: Math.random() * 1200, y: Math.random() * 800,
+        vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
+        r: Math.random() * 1.4 + .4,
+        a: Math.random() * .35 + .05
+      });
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        pts.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+          if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
           ctx.beginPath();
-          ctx.moveTo(pts[i].x, pts[i].y);
-          ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.strokeStyle = `rgba(212,168,67,${.08 * (1 - dist/120)})`;
-          ctx.lineWidth = .5;
-          ctx.stroke();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(212,168,67,${p.a})`;
+          ctx.fill();
+        });
+        // draw faint connecting lines between nearby particles
+        for (let i = 0; i < pts.length; i++) {
+          for (let j = i + 1; j < pts.length; j++) {
+            const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(pts[i].x, pts[i].y);
+              ctx.lineTo(pts[j].x, pts[j].y);
+              ctx.strokeStyle = `rgba(212,168,67,${.08 * (1 - dist / 120)})`;
+              ctx.lineWidth = .5;
+              ctx.stroke();
+            }
+          }
         }
+        requestAnimationFrame(draw);
       }
+      draw();
+    })();
+
+    // ── ANIMATED COUNTER (hero stats) ──
+    function animateCount(el, target, duration) {
+      let start = null;
+      const step = ts => {
+        if (!start) start = ts;
+        const progress = Math.min((ts - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      };
+      requestAnimationFrame(step);
     }
-    requestAnimationFrame(draw);
-  }
-  draw();
-})();
 
-// ── ANIMATED COUNTER (hero stats) ──
-function animateCount(el, target, duration) {
-  let start = null;
-  const step = ts => {
-    if (!start) start = ts;
-    const progress = Math.min((ts - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.floor(ease * target);
-    if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = target;
-  };
-  requestAnimationFrame(step);
-}
-
-// trigger counters when hero-meta visible
-const metaObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      document.querySelectorAll('.count-anim').forEach(el => {
-        animateCount(el, parseInt(el.dataset.target), 1600);
+    // trigger counters when hero-meta visible
+    const metaObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.count-anim').forEach(el => {
+            animateCount(el, parseInt(el.dataset.target), 1600);
+          });
+          metaObs.disconnect();
+        }
       });
-      metaObs.disconnect();
-    }
-  });
-}, { threshold: .5 });
-const heroMeta = document.querySelector('.hero-meta');
-if (heroMeta) metaObs.observe(heroMeta);
+    }, { threshold: .5 });
+    const heroMeta = document.querySelector('.hero-meta');
+    if (heroMeta) metaObs.observe(heroMeta);
 
-// ── LINE-DRAW DIVIDERS (scroll-triggered) ──
-const lineObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
-}, { threshold: .3 });
-document.querySelectorAll('.line-draw').forEach(el => lineObs.observe(el));
+    // ── LINE-DRAW DIVIDERS (scroll-triggered) ──
+    const lineObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+    }, { threshold: .3 });
+    document.querySelectorAll('.line-draw').forEach(el => lineObs.observe(el));
 
-// ── MAGNETIC HOVER (roles & contra items) ──
-document.querySelectorAll('.role, .contra').forEach(el => {
-  el.addEventListener('mousemove', e => {
-    const r = el.getBoundingClientRect();
-    const dx = (e.clientX - r.left - r.width  / 2) / r.width;
-    const dy = (e.clientY - r.top  - r.height / 2) / r.height;
-    el.style.transform = `translate(${dx * 6}px, ${dy * 5}px)`;
-  });
-  el.addEventListener('mouseleave', () => {
-    el.style.transform = '';
-    el.style.transition = 'transform .5s cubic-bezier(.16,1,.3,1)';
-    setTimeout(() => el.style.transition = '', 500);
-  });
-});
-
-// ── TYPEWRITER EFFECT (hero subtitle) ──
-(function() {
-  const el = document.querySelector('.hero-sub');
-  if (!el) return;
-  const text = el.textContent;
-  el.textContent = '';
-  const cur = document.createElement('span');
-  cur.className = 'tw-cursor';
-  el.appendChild(cur);
-  let i = 0;
-  // wait for hero fade-in
-  setTimeout(() => {
-    const iv = setInterval(() => {
-      if (i < text.length) {
-        el.insertBefore(document.createTextNode(text[i]), cur);
-        i++;
-      } else {
-        clearInterval(iv);
-        // remove cursor after done
-        setTimeout(() => cur.style.display = 'none', 2000);
-      }
-    }, 22);
-  }, 1200);
-})();
-
-// ── FLOATING BACKGROUND GLYPHS (intro & part2) ──
-(function() {
-  const glyphs = ['∑', '∞', '≠', '∿', '⊗', '≡', 'Δ', '∂'];
-  ['.intro-strip', '.part2', '.conclusion'].forEach(sel => {
-    const sec = document.querySelector(sel);
-    if (!sec) return;
-    const style = getComputedStyle(sec);
-    if (style.position === 'static') sec.style.position = 'relative';
-    sec.style.overflow = 'hidden';
-    for (let k = 0; k < 4; k++) {
-      const g = document.createElement('span');
-      g.className = 'float-glyph';
-      g.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
-      g.style.cssText = [
-        `font-size:${6 + Math.random() * 8}rem`,
-        `left:${Math.random() * 90}%`,
-        `top:${Math.random() * 80}%`,
-        `animation:floatY ${7 + Math.random() * 6}s ease-in-out ${Math.random() * 4}s infinite`
-      ].join(';');
-      sec.appendChild(g);
-    }
-  });
-})();
-
-// ── SMOOTH SECTION HIGHLIGHT in NAV ──
-const sections = document.querySelectorAll('section[id], header');
-const navLinks = document.querySelectorAll('.nav-links a');
-const hlObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(a => {
-        a.style.color = '';
-        if (a.getAttribute('href') === '#' + e.target.id) a.style.color = 'var(--amber)';
+    // ── MAGNETIC HOVER (roles & contra items) ──
+    document.querySelectorAll('.role, .contra').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width / 2) / r.width;
+        const dy = (e.clientY - r.top - r.height / 2) / r.height;
+        el.style.transform = `translate(${dx * 6}px, ${dy * 5}px)`;
       });
-    }
-  });
-}, { threshold: .4 });
-sections.forEach(s => hlObs.observe(s));
-
-// ── ANSWER BUTTON STAGGER on quiz load ──
-const origLoadQ = window.loadQ;
-// patch loadQ to add stagger after render
-const qGrid = document.getElementById('q-grid');
-if (qGrid) {
-  const mo = new MutationObserver(() => {
-    const btns = qGrid.querySelectorAll('.a-btn');
-    btns.forEach((b, i) => {
-      b.style.opacity = '0';
-      b.style.transform = 'translateY(12px)';
-      b.style.transition = `opacity .35s ease ${i * .08}s, transform .35s ease ${i * .08}s, border-color .2s, background .2s`;
-      requestAnimationFrame(() => {
-        b.style.opacity = '1';
-        b.style.transform = 'translateY(0)';
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+        el.style.transition = 'transform .5s cubic-bezier(.16,1,.3,1)';
+        setTimeout(() => el.style.transition = '', 500);
       });
     });
-  });
-  mo.observe(qGrid, { childList: true });
-}
 
-</script>
+    // ── TYPEWRITER EFFECT (hero subtitle) ──
+    (function () {
+      const el = document.querySelector('.hero-sub');
+      if (!el) return;
+      const text = el.textContent;
+      el.textContent = '';
+      const cur = document.createElement('span');
+      cur.className = 'tw-cursor';
+      el.appendChild(cur);
+      let i = 0;
+      // wait for hero fade-in
+      setTimeout(() => {
+        const iv = setInterval(() => {
+          if (i < text.length) {
+            el.insertBefore(document.createTextNode(text[i]), cur);
+            i++;
+          } else {
+            clearInterval(iv);
+            // remove cursor after done
+            setTimeout(() => cur.style.display = 'none', 2000);
+          }
+        }, 22);
+      }, 1200);
+    })();
+
+    // ── FLOATING BACKGROUND GLYPHS (intro & part2) ──
+    (function () {
+      const glyphs = ['∑', '∞', '≠', '∿', '⊗', '≡', 'Δ', '∂'];
+      ['.intro-strip', '.part2', '.conclusion'].forEach(sel => {
+        const sec = document.querySelector(sel);
+        if (!sec) return;
+        const style = getComputedStyle(sec);
+        if (style.position === 'static') sec.style.position = 'relative';
+        sec.style.overflow = 'hidden';
+        for (let k = 0; k < 4; k++) {
+          const g = document.createElement('span');
+          g.className = 'float-glyph';
+          g.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+          g.style.cssText = [
+            `font-size:${6 + Math.random() * 8}rem`,
+            `left:${Math.random() * 90}%`,
+            `top:${Math.random() * 80}%`,
+            `animation:floatY ${7 + Math.random() * 6}s ease-in-out ${Math.random() * 4}s infinite`
+          ].join(';');
+          sec.appendChild(g);
+        }
+      });
+    })();
+
+    // ── SMOOTH SECTION HIGHLIGHT in NAV ──
+    const sections = document.querySelectorAll('section[id], header');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const hlObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => {
+            a.style.color = '';
+            if (a.getAttribute('href') === '#' + e.target.id) a.style.color = 'var(--amber)';
+          });
+        }
+      });
+    }, { threshold: .4 });
+    sections.forEach(s => hlObs.observe(s));
+
+    // ── ANSWER BUTTON STAGGER on quiz load ──
+    const origLoadQ = window.loadQ;
+    // patch loadQ to add stagger after render
+    const qGrid = document.getElementById('q-grid');
+    if (qGrid) {
+      const mo = new MutationObserver(() => {
+        const btns = qGrid.querySelectorAll('.a-btn');
+        btns.forEach((b, i) => {
+          b.style.opacity = '0';
+          b.style.transform = 'translateY(12px)';
+          b.style.transition = `opacity .35s ease ${i * .08}s, transform .35s ease ${i * .08}s, border-color .2s, background .2s`;
+          requestAnimationFrame(() => {
+            b.style.opacity = '1';
+            b.style.transform = 'translateY(0)';
+          });
+        });
+      });
+      mo.observe(qGrid, { childList: true });
+    }
+
+  </script>
 </body>
+
 </html>
